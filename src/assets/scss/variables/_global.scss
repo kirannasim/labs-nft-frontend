@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Revamped';
+  // src: local('Revamped'), url(./fonts/Rajdhani/Rajdhani-Regular.ttf) format('truetype');
+  src: local('Revamped'), url(../../fonts/Revamped.otf) format('truetype');
+}
+
+h2 {
+  font-family: 'Revamped';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 6.125rem;
+  line-height: 7.0625rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: 'Revamped';
+  font-weight: 400;
+  font-size: 3.75rem;
+  line-height: 4.3rem;
+  margin: 0;
+
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: 'Revamped';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.25rem;
+  line-height: 2.5625rem;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-family: 'Revamped';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.bb_16_thin {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  text-transform: uppercase;
+}
+
+.bb_18 {
+  color: white;
+  font-family: 'Barlow';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.bb_18_light {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.bb_16_medium {
+  font-family: 'Barlow';
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  text-transform: uppercase;
+}

@@ -1,15 +1,6 @@
-@import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap';
+@import './assets/scss/variables/global';
+@import './assets/scss/variables/variables';
 .App {
   text-align: center;
-}
-
-h3 {
-  font-family: 'Revamped';
-  font-weight: 400;
-  font-size: 3.75rem;
-  line-height: 4.3rem;
-  margin: 0;
-
-  text-transform: uppercase;
 }

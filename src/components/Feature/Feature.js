@@ -41,10 +41,13 @@ const gameItem_data = [
 const Feature = () => {
   return (
     <div className="feature--container">
-      <h3 className="feature--container__heading">Our featured Games</h3>
+      <h3 className="feature--container__heading text-center">
+        Our featured Games
+      </h3>
       <div className="feature--container__content">
-        {gameItem_data.map((item) => (
+        {gameItem_data.map((item, index) => (
           <GameItem
+            key={index}
             image={item.image}
             headingText={item.heading_text}
             developerName={item.developer_name}
