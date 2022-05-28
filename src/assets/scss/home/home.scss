@@ -1,7 +1,8 @@
 .home-page {
-  background: url('../../images/home-background.png');
+  background: url("../../images/home-background.png");
   background-size: cover;
-  height: fit-content;
+  // height: fit-content;
+  height: 1080px;
   max-width: 120rem;
   margin: auto;
 }
