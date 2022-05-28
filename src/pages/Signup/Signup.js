@@ -15,14 +15,14 @@ const Signup = () => {
           <img src={signupImg} alt="log image" />
         </div>
         <div className="login-form">
-          <h2 className="login-title">SIGN UP</h2>
+          <h3 className="login-title">SIGN UP</h3>
           <div className="input-box">
             <div className="icon">
               <HiOutlineUserCircle />
             </div>
             <input
               type="text"
-              className="input-edit"
+              className="input-edit bb_16_thin"
               width={400}
               height={60}
               placeholder="Enter Your Full Name "
@@ -34,7 +34,7 @@ const Signup = () => {
               <FiMail />
             </div>
             <input
-              className="input-edit"
+              className="input-edit bb_16_thin"
               width={400}
               height={60}
               placeholder="Enter Your Email Address"
@@ -47,7 +47,7 @@ const Signup = () => {
             </div>
             <input
               type="password"
-              className="input-edit"
+              className="input-edit bb_16_thin"
               width={400}
               height={60}
               placeholder="password "

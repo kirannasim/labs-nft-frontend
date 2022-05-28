@@ -3,7 +3,6 @@ import Topbar from "../../components/Topbar";
 import "../../assets/scss/login/login.scss";
 import { FiMail } from "react-icons/fi";
 import { HiKey } from "react-icons/hi";
-import mail from "../../assets/icon/mail.svg";
 import google from "../../assets/icon/google.svg";
 import loginImg from "../../assets/images/login.png";
 const Login = () => {
@@ -15,13 +14,13 @@ const Login = () => {
           <img src={loginImg} alt="log image" />
         </div>
         <div className="login-form">
-          <h2 className="login-title">LOG IN</h2>
+          <h3 className="login-title">LOG IN</h3>
           <div className="input-box">
             <div className="icon">
               <FiMail />
             </div>
             <input
-              className="input-edit"
+              className="input-edit bb_16_thin"
               width={400}
               height={60}
               placeholder="Enter Your Email Address / User Name "
@@ -34,7 +33,7 @@ const Login = () => {
             </div>
             <input
               type="password"
-              className="input-edit"
+              className="input-edit bb_16_thin"
               width={400}
               height={60}
               placeholder="password "
