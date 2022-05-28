@@ -3,10 +3,17 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 79.375rem;
+  max-width: 82.375rem;
+  padding-left: 24px;
+  padding-right: 24px;
   margin: auto;
 
   &__content {
+    width: 100%;
     margin-top: 3.75rem;
+
+    .title-text {
+      margin-bottom: 0.1875px;
+    }
   }
 }

@@ -7,10 +7,17 @@ const Topbar = () => {
     <div className="banner--container">
       <div className="row">
         <div className="banner--left col-xxl-6 col-12 d-flex flex-column align-items-xxl-start align-items-center">
-          <h3>Blockchain Games</h3>
+          <h3 className="text-center">Blockchain Games</h3>
           <h2>Enginnered</h2>
-          <p className="BB_34">To Be Social, Exciting & Time Efficient</p>
-          <p className="Bb_22">
+          <p className="BB_34 text-center text-xxl-left">
+            To Be Social, Exciting & Time Efficient
+          </p>
+          <img
+            src={bannerImgage}
+            alt="Banner Image"
+            className="d-block d-xxl-none banner--left__image"
+          />
+          <p className="Bb_22 text-left">
             The WorkGenius Platform holds over 350,000 registered freelancers
             (“Geniuses”) providing professional services across.
           </p>
@@ -18,7 +25,7 @@ const Topbar = () => {
             Learn More
           </button>
         </div>
-        <div className="banner--right col-xxl-6 col-12">
+        <div className="banner--right col-xxl-6 col-12 d-xxl-block d-none">
           <img src={bannerImgage} alt="Banner Image" />
         </div>
       </div>
