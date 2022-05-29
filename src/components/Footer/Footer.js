@@ -13,27 +13,27 @@ const Node = () => {
         <img src={footerLogoImage} />
       </div>
       <div className="footer--container__menu row">
-        <a className="menu-item bb_16_medium col-4 col-lg-2" href="#">
+        <a className="menu-item bb_16_medium col-6 col-md-4 col-lg-2" href="#">
           Home
         </a>
 
-        <a className="menu-item bb_16_medium col-4 col-lg-2" href="#">
+        <a className="menu-item bb_16_medium col-6 col-md-4 col-lg-2" href="#">
           About
         </a>
 
-        <a className="menu-item bb_16_medium col-4 col-lg-2" href="#">
+        <a className="menu-item bb_16_medium col-6 col-md-4 col-lg-2" href="#">
           Games
         </a>
 
-        <a className="menu-item bb_16_medium col-4 col-lg-2" href="#">
+        <a className="menu-item bb_16_medium col-6 col-md-4 col-lg-2" href="#">
           Nodes
         </a>
 
-        <a className="menu-item bb_16_medium col-4 col-lg-2" href="#">
+        <a className="menu-item bb_16_medium col-6 col-md-4 col-lg-2" href="#">
           Careers
         </a>
 
-        <a className="menu-item bb_16_medium col-4 col-lg-2" href="#">
+        <a className="menu-item bb_16_medium col-6 col-md-4 col-lg-2" href="#">
           Join Discord
         </a>
       </div>
