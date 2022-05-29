@@ -8,7 +8,7 @@
 }
 
 .login-section {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: row;
   top: 50%;
@@ -20,6 +20,7 @@
   @media (max-width: 991px) {
     flex-direction: column;
     top: 40%;
+    // margin-left: 20%;
   }
   .login {
     width: 50%;
@@ -49,6 +50,9 @@
     .login-title {
       color: #ffffff;
       text-align: center;
+      @media (max-width: 991px) {
+        font-size: 1.5rem;
+      }
     }
     .input-box {
       position: relative;
