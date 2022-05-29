@@ -9,7 +9,7 @@ import '../../assets/scss/home/home.scss'
 const Home = () => {
   return (
     <div className="home-page">
-      <Topbar loginStatus={true} />
+      <Topbar loginStatus={false} />
       <Banner />
       <Feature />
       <Node />

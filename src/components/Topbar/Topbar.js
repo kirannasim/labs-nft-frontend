@@ -78,29 +78,33 @@ const Topbar = ({ loginStatus }) => {
             )}
           </ul>
           <div className="d-flex">
-            {/* <Link to="/login">
-              <button
-                type="button"
-                className="btn btn-outline-primary topbar--btn"
-              >
-                Login
-              </button>
-            </Link>
-            <Link to="/signup">
-              <button type="button" className="btn btn-primary topbar--btn">
-                Sign Up
-              </button>
-            </Link> */}
-
-            <div className="login--container">
-              <div className="login--container__image--wapper"></div>
-              <span className="login--container__user--name bb_16_thin">
-                Linthang Chang
-              </span>
-              <div className="login--container__toggole--button">
-                <img src={loginRightIconImage} />
+            {!loginStatus ? (
+              <>
+                <Link to="/login">
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary topbar--btn"
+                  >
+                    Login
+                  </button>
+                </Link>
+                <Link to="/signup">
+                  <button type="button" className="btn btn-primary topbar--btn">
+                    Sign Up
+                  </button>
+                </Link>
+              </>
+            ) : (
+              <div className="login--container">
+                <div className="login--container__image--wapper"></div>
+                <span className="login--container__user--name bb_16_thin">
+                  Linthang Chang
+                </span>
+                <div className="login--container__toggole--button">
+                  <img src={loginRightIconImage} />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
