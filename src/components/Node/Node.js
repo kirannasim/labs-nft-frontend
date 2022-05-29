@@ -1,10 +1,10 @@
-import React from 'react'
-import '../../assets/scss/home/node.scss'
-import computerImage from '../../assets/images/computer.png'
+import React from "react";
+import "../../assets/scss/home/node.scss";
+import computerImage from "../../assets/images/computer.png";
 
 const Node = () => {
   return (
-    <div className="node--container">
+    <div className="full-container">
       <div className="row node--container__wrapper">
         <div className="col-12 col-xxl-7 content--container">
           <h3>Look Labs</h3>
@@ -25,7 +25,7 @@ const Node = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Node
+export default Node;

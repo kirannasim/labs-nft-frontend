@@ -11,7 +11,7 @@ const PurchaseDetails = () => {
       <PurchaseDetailsContent />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default PurchaseDetails
+export default PurchaseDetails;
