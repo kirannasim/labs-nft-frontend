@@ -1,13 +1,13 @@
 .navbar {
-  @media (max-width: 991px) {
+  @media (max-width: 1200px) {
     background-color: #080808;
   }
 }
 
 .navbar-container {
-  max-width: 1530px;
+  max-width: 95.625rem;
   width: 100%;
-  margin-top: 56px;
+  margin-top: 3.5rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -16,8 +16,14 @@
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 991px) {
+  @media (max-width: 1200px) {
     margin-top: 0;
+  }
+
+  @media (max-width: 1200px) {
+    .navbar-collapse {
+      padding-bottom: 1rem;
+    }
   }
 
   @media (max-width: 1600px) {
@@ -42,7 +48,7 @@
       text-transform: uppercase;
       padding: 0 1.25rem !important;
 
-      @media (max-width: 991px) {
+      @media (max-width: 1200px) {
         padding: 0.2rem 0 !important;
         margin-top: 20px;
       }

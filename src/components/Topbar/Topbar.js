@@ -47,7 +47,7 @@ const nav_menus_logined = [
 ]
 const Topbar = ({ loginStatus }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav className="navbar navbar-expand-xl navbar-light fixed-top">
       <div className="navbar-container">
         <a className="navbar-brand" href="#">
           <img src={logoImgage} alt="Logo Image" />
@@ -66,7 +66,7 @@ const Topbar = ({ loginStatus }) => {
           </div>
         </div>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mb-2 mb-lg-0">
+          <ul className="navbar-nav mb-2 mb-xl-0">
             {(!loginStatus ? nav_menus_unlogined : nav_menus_logined).map(
               (item) => (
                 <li className="nav-item" key={item.name}>
