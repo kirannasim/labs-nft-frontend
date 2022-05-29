@@ -31,6 +31,9 @@
       .bb_18_light {
         margin-top: 2.1rem;
         max-width: 50.625rem;
+        @media (max-width: 1440px) {
+          margin: auto;
+        }
       }
 
       button {
@@ -41,6 +44,11 @@
         padding: 19px 123px;
         margin-top: 2rem;
         margin-bottom: 10.6875rem;
+
+        @media (max-width: 1440px) {
+          margin: auto;
+          margin-top: 1rem;
+        }
       }
 
       @media (max-width: 1800px) {
@@ -48,6 +56,11 @@
           font-size: 5.125rem;
         }
         width: 50%;
+      }
+      @media (max-width: 768px) {
+        h2 {
+          font-size: 3.125rem;
+        }
       }
 
       @media (max-width: 1600px) {

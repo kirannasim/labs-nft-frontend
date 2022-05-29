@@ -1,9 +1,51 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logoImgage from "../../assets/images/logo.png";
-import "../../assets/scss/home/topbar.scss";
-import { FiMenu } from "react-icons/fi";
-const Topbar = () => {
+import React from 'react'
+import { Link } from 'react-router-dom'
+import logoImgage from '../../assets/images/logo.png'
+import loginRightIconImage from '../../assets/images/loginRightIcon.svg'
+import '../../assets/scss/home/topbar.scss'
+import { FiMenu } from 'react-icons/fi'
+const nav_menus_unlogined = [
+  {
+    name: 'home',
+    href: '',
+  },
+  {
+    name: 'about',
+    href: '',
+  },
+  {
+    name: 'games',
+    href: '',
+  },
+  {
+    name: 'nodes',
+    href: '',
+  },
+  {
+    name: 'careers',
+    href: '',
+  },
+  {
+    name: 'join discord',
+    href: '',
+  },
+]
+
+const nav_menus_logined = [
+  {
+    name: 'home',
+    href: '',
+  },
+  {
+    name: 'my node',
+    href: '',
+  },
+  {
+    name: 'my account',
+    href: '',
+  },
+]
+const Topbar = ({ loginStatus }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
       <div className="navbar-container">
@@ -25,39 +67,18 @@ const Topbar = () => {
         </div>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Games
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Nodes
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Careers
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Join Discord
-              </a>
-            </li>
+            {(!loginStatus ? nav_menus_unlogined : nav_menus_logined).map(
+              (item) => (
+                <li className="nav-item" key={item.name}>
+                  <a className="nav-link" href={item.href}>
+                    {item.name}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
           <div className="d-flex">
-            <Link to="/login">
+            {/* <Link to="/login">
               <button
                 type="button"
                 className="btn btn-outline-primary topbar--btn"
@@ -69,12 +90,22 @@ const Topbar = () => {
               <button type="button" className="btn btn-primary topbar--btn">
                 Sign Up
               </button>
-            </Link>
+            </Link> */}
+
+            <div className="login--container">
+              <div className="login--container__image--wapper"></div>
+              <span className="login--container__user--name bb_16_thin">
+                Linthang Chang
+              </span>
+              <div className="login--container__toggole--button">
+                <img src={loginRightIconImage} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Topbar;
+export default Topbar

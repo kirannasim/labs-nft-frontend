@@ -40,12 +40,10 @@ const GameItem = ({
             <h5 className="mt-3 title-text">platfrom</h5>
             <p className="bb_16_thin">{platform}</p>
           </div>
-          <div className="row">
-            <div className="col-12">
-              <button type="button" className="btn btn-primary">
-                <span className="bb_18">play game</span>
-              </button>
-            </div>
+          <div className="col-12 button--container">
+            <button type="button" className="btn btn-primary">
+              <span className="bb_18">play game</span>
+            </button>
           </div>
         </div>
       </div>

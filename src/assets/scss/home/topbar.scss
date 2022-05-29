@@ -5,7 +5,8 @@
 }
 
 .navbar-container {
-  width: 1530px;
+  max-width: 1530px;
+  width: 100%;
   margin-top: 56px;
   margin-left: auto;
   margin-right: auto;
@@ -23,11 +24,7 @@
     padding: 0 2rem;
   }
 
-  // @media (max-width: 991px) {
-  //   padding: 0 2rem;
-  // }
   .navbar-toggler {
-    // background-color: white;
     .icon {
       color: #fff;
     }
@@ -38,7 +35,7 @@
 
     .nav-link {
       color: white !important;
-      font-family: "Barlow";
+      font-family: 'Barlow';
       font-weight: bold;
       font-size: 1rem;
       line-height: 1.1875rem;
@@ -49,6 +46,33 @@
         padding: 0.2rem 0 !important;
         margin-top: 20px;
       }
+    }
+  }
+
+  .login--container {
+    min-width: 15.125rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+
+    &__image--wapper {
+      background-color: #c4c4c4;
+      border-radius: 50%;
+      width: 2.8125rem;
+      height: 2.8125rem;
+    }
+
+    &__user--name {
+      padding-left: 0.9375rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &__toggole--button {
+      position: absolute;
+      right: 0.1rem;
+      top: 50%;
+      transform: translateY(-60%);
     }
   }
 
