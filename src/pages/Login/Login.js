@@ -1,11 +1,19 @@
 import React from "react";
 import Topbar from "../../components/Topbar";
-import "../../assets/scss/login/login.scss";
 import { FiMail } from "react-icons/fi";
 import { HiKey } from "react-icons/hi";
 import google from "../../assets/icon/google.svg";
 import loginImg from "../../assets/images/login.png";
+import "../../assets/scss/login/login.scss";
 const Login = () => {
+  const signInGoogle = () => {
+    console.log("signIn");
+  };
+
+  const signin = () => {
+    console.log("logIn");
+  };
+
   return (
     <div className="login-page">
       <Topbar />
@@ -50,10 +58,13 @@ const Login = () => {
             </div>
             <span className="forgot">Forgot Password</span>
           </div>
-          <button className="primaryBtn">Login</button>
-          <button className="signInGoogle">
+          <button className="primaryBtn" onClick={signin}>
+            LOG IN
+          </button>
+
+          <button className="signInGoogle" onClick={signInGoogle}>
             <img src={google} />
-            SIGN IN GOOGLE
+            <div className="google-text">SIGN IN GOOGLE</div>
           </button>
           <div className="signupLink">
             <span className="ask">DON'T HAVE AN ACCOUNT?</span>

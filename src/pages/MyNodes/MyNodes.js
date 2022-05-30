@@ -14,7 +14,7 @@ const MyNodes = () => {
       <Banner />
       <NodeCards />
       <GameCard />
-      {/* <TransactionHistory /> */}
+      <TransactionHistory />
       <Footer />
     </div>
   );
