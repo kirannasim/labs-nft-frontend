@@ -16,23 +16,28 @@ const Topbar = ({ loginStatus }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mb-2 mb-xl-0">
             {(!loginStatus ? nav_menus_unlogined : nav_menus_logined).map(
-              (item) => (
-                <NavLink
-                  // to={item.href}
-                  to={{ pathname: 'https://infortts.com' }}
-                  className={(isActive) =>
-                    'nav-link' + (!isActive ? ' unselected' : '')
-                  }
-                  key={item.name}
-                >
-                  {item.name}
-                </NavLink>
-                // <li className="nav-item" key={item.name}>
-                //   <a className="nav-link" href={item.href}>
-                //     {item.name}
-                //   </a>
-                // </li>
-              )
+              (item) =>
+                item.is_react_router ? (
+                  <NavLink
+                    to={item.href}
+                    className={(isActive) =>
+                      'nav-link' + (!isActive ? ' unselected' : '')
+                    }
+                    key={item.name}
+                  >
+                    {item.name}
+                  </NavLink>
+                ) : (
+                  <li className="nav-item" key={item.name}>
+                    <a
+                      className="nav-link"
+                      href={item.href}
+                      target={item.is_new_target ? '_blank' : null}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                )
             )}
           </ul>
           <div className="d-flex">
