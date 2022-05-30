@@ -7,9 +7,9 @@ const Topbar = () => {
     <div className="banner--container">
       <div className="row">
         <div className="banner--left col-xxl-6 col-12 d-flex flex-column align-items-xxl-start align-items-center">
-          <h3 className="text-center">Blockchain Games</h3>
+          <h3>Blockchain Games</h3>
           <h2>Enginnered</h2>
-          <p className="BB_34 text-center text-xxl-left">
+          <p className="BB_34 text-center text-xxl-start">
             To Be Social, Exciting & Time Efficient
           </p>
           <img
@@ -22,7 +22,7 @@ const Topbar = () => {
             (“Geniuses”) providing professional services across.
           </p>
           <button type="button" className="btn btn-primary btn-learn">
-            Learn More
+            <div className="bb_18">Learn More</div>
           </button>
         </div>
         <div className="banner--right col-xxl-6 col-12 d-xxl-block d-none">

@@ -30,11 +30,6 @@
     padding: 0 2rem;
   }
 
-  .navbar-toggler {
-    .icon {
-      color: #fff;
-    }
-  }
   .navbar-nav {
     margin-left: auto;
     margin-right: auto;
@@ -42,7 +37,7 @@
     .nav-link {
       color: white !important;
       font-family: 'Barlow';
-      font-weight: bold;
+      font-weight: 500;
       font-size: 1rem;
       line-height: 1.1875rem;
       text-transform: uppercase;
@@ -80,6 +75,22 @@
       top: 50%;
       transform: translateY(-60%);
     }
+
+    &__collapse--content {
+      color: white;
+      padding: 1.5rem;
+      position: absolute;
+      top: 3.5rem;
+      right: 0;
+      width: 100%;
+      height: fit-content;
+      background-color: #000000bd;
+      border-radius: 0.3rem;
+
+      a {
+        color: white;
+      }
+    }
   }
 
   .topbar--btn {
@@ -101,10 +112,3 @@
     }
   }
 }
-
-// .responsive-header{
-//   display: {
-//     xs:'none',
-//     lg:'flex'
-//   };
-// }
