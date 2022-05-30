@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 
-import Home from '../pages/Home'
-import Login from '../pages/Login'
-import Signup from '../pages/Signup/Signup'
-import AccountDetails from '../pages/AccountDetails/AccountDetails'
-import MyNodes from '../pages/MyNodes/MyNodes'
-import PurchaPurchaseDetails from '../pages/PurchaseDetails/PurchaseDetails'
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Signup from "../pages/Signup/Signup";
+import AccountDetails from "../pages/AccountDetails/AccountDetails";
+import MyNodes from "../pages/MyNodes/MyNodes";
+import PurchaPurchaseDetails from "../pages/PurchaseDetails/PurchaseDetails";
 
 const Routers = () => {
   return (
@@ -23,7 +23,7 @@ const Routers = () => {
         element={<PurchaPurchaseDetails />}
       />
     </Routes>
-  )
-}
+  );
+};
 
-export default Routers
+export default Routers;

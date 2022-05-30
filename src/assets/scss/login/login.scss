@@ -24,6 +24,7 @@
       flex-direction: column;
       top: 40%;
       padding: 24px;
+      padding-top: 100px;
     }
     .login {
       width: 50%;
@@ -110,6 +111,7 @@
         justify-content: space-between;
         margin-top: 3%;
         color: #ffffff;
+        font-size: 14px;
         .remem {
           display: flex;
           width: 40%;
@@ -131,6 +133,7 @@
         background-color: #2043f1;
         color: #ffffff;
         margin-top: 5%;
+        font-size: 18px;
       }
 
       .signInGoogle {
@@ -143,12 +146,17 @@
         display: flex;
         justify-content: center;
         padding-top: 15px;
+        font-size: 18px;
+        .google-text {
+          margin-left: 5px;
+        }
       }
       .signupLink {
         margin-top: 8%;
         color: #ffffff;
         display: flex;
         justify-content: space-around;
+        font-size: 18px;
       }
     }
   }

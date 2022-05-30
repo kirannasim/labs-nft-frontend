@@ -15,7 +15,7 @@
     align-items: center;
     margin: auto;
     padding-top: 179px;
-    @media (max-width: 768px) {
+    @media (max-width: 1400px) {
       padding-top: 59px;
     }
 
@@ -26,21 +26,21 @@
         color: #2043f1;
         font-size: 3.4rem;
         text-align: center;
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
           font-size: 1.4rem;
         }
       }
       .nodes {
         color: #fff;
         text-align: center;
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
           font-size: 3.4rem;
         }
       }
       .BB_34 {
         color: #fff;
         text-align: center;
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
           font-size: 0.7rem;
         }
       }
@@ -58,11 +58,19 @@
       padding-top: 15px;
       align-items: center;
       margin: auto;
-      @media (max-width: 768px) {
+      @media (max-width: 1400px) {
         flex-direction: column;
         width: 100%;
         padding: 20px;
       }
+
+      @media (max-width: 1468px) {
+        flex-direction: column;
+        max-width: 915px;
+        width: 100%;
+        padding: 20px;
+      }
+
       .card1 {
         max-width: 330px;
         width: 100%;
@@ -70,14 +78,11 @@
         background: url("../../images/rect1.png");
         background-size: cover;
         background-repeat: no-repeat;
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
           margin-top: 10px;
           max-width: 465px;
           height: 350px;
         }
-        //   border: #2043f1;
-        //   border-style: solid;
-        //   border-width: 1px;
       }
       .card-title {
         max-width: 256px;
@@ -100,7 +105,7 @@
         background: url("../../images/rect2.png");
         background-size: cover;
         background-repeat: no-repeat;
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
           margin-top: 30px;
           max-width: 465px;
           height: 350px;
@@ -113,7 +118,7 @@
         background: url("../../images/rect4.png");
         background-size: cover;
         background-repeat: no-repeat;
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
           margin-top: 30px;
           width: 100%;
           max-width: 465px;
@@ -127,7 +132,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
           height: 550px;
         }
         .card31 {
@@ -137,7 +142,7 @@
           background-size: cover;
           background-repeat: no-repeat;
           background-image: c;
-          @media (max-width: 768px) {
+          @media (max-width: 1400px) {
             margin-top: 30px;
             height: 550px;
           }
@@ -149,7 +154,7 @@
           background: url("../../images/rect32.png");
           background-size: cover;
           background-repeat: no-repeat;
-          @media (max-width: 768px) {
+          @media (max-width: 1400px) {
             margin-top: 30px;
             height: 550px;
           }
@@ -169,7 +174,7 @@
         margin-left: 45%;
         background-color: #2043f1;
         color: #fff;
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
           margin-left: 30%;
         }
       }
@@ -233,9 +238,10 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 179px;
+    padding-top: 80px;
+    padding-bottom: 6.06rem;
     margin: auto;
-    @media (max-width: 768px) {
+    @media (max-width: 1400px) {
       padding-top: 59px;
     }
     .history-title {
@@ -244,19 +250,27 @@
       color: #fff;
       font-size: 3.4rem;
       text-align: center;
-      @media (max-width: 768px) {
+      @media (max-width: 1400px) {
         font-size: 1.4rem;
       }
     }
 
-    .transaction-history-table {
+    // .transaction-history-table {
+    .row-wrapper {
       max-width: 1526px;
       width: 100%;
       margin-top: 2rem;
-      .table-header {
+      height: 63px;
+      tr {
+        max-width: 1526px;
         width: 100%;
-        height: 63px;
-        th {
+        .symbolIcon {
+          max-width: 800px;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
           .round-rect {
             width: 45px;
             height: 45px;
@@ -267,6 +281,15 @@
             align-items: center;
             margin: auto;
           }
+          .data-title {
+            padding-top: 12px;
+            font-size: 16px;
+            padding-left: 0px !important;
+          }
+        }
+        th {
+          max-width: 300px;
+          text-align: center;
           .invoice-button {
             width: 140px;
             height: 41px;
@@ -278,9 +301,29 @@
             font-size: 16px;
           }
         }
-
-        // display: flex;
-        // justify-content: space-between;
+        td {
+          width: 300px;
+          color: #fff;
+          text-align: center;
+        }
+      }
+    }
+    .show-more {
+      max-width: 1515px;
+      width: 100%;
+      height: 19px;
+      margin: auto;
+      padding-top: 6rem;
+      .showBtn {
+        width: 165px;
+        height: 50px;
+        font-size: 16px;
+        margin-left: 45%;
+        background-color: #2043f1;
+        color: #fff;
+        @media (max-width: 1400px) {
+          margin-left: 30%;
+        }
       }
     }
   }
