@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Topbar from "../../components/Topbar";
-import { FiMail } from "react-icons/fi";
-import { HiKey } from "react-icons/hi";
-import google from "../../assets/icon/google.svg";
-import loginImg from "../../assets/images/login.png";
-import "../../assets/scss/login/login.scss";
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Topbar from '../../components/Topbar'
+import { FiMail } from 'react-icons/fi'
+import { HiKey } from 'react-icons/hi'
+import google from '../../assets/icon/google.svg'
+import loginImg from '../../assets/images/login.png'
+import '../../assets/scss/login/login.scss'
 // Oauth google login part
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { GoogleLogin, GoogleLogout } from 'react-google-login'
 
 const clientId =
-  "498758921859-o179v4o7ub530vdsjld75qjd2o1uf3li.apps.googleusercontent.com";
+  '498758921859-o179v4o7ub530vdsjld75qjd2o1uf3li.apps.googleusercontent.com'
 
 // refresh token
 // import { refreshTokenSetup } from "./data/refreshToken";
@@ -19,44 +19,44 @@ const clientId =
 // import authService from "./service/authService";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [url, setUrl] = useState("");
+  const navigate = useNavigate()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [url, setUrl] = useState('')
 
-  const [loginStatus, setLoginStatus] = useState(false);
-  const [account, setAccount] = useState({ email: "", password: "" });
+  const [loginStatus, setLoginStatus] = useState(false)
+  const [account, setAccount] = useState({ email: '', password: '' })
 
   const responseGoogle = (response) => {
-    console.log(response);
-    setName(response.profileObj.name);
-    setEmail(response.profileObj.email);
-    setUrl(response.profileObj.imageUrl);
-    setLoginStatus(true);
-  };
+    console.log(response)
+    setName(response.profileObj.name)
+    setEmail(response.profileObj.email)
+    setUrl(response.profileObj.imageUrl)
+    setLoginStatus(true)
+  }
 
   const logout = () => {
-    console.log("logout");
-    setLoginStatus(false);
-  };
+    console.log('logout')
+    setLoginStatus(false)
+  }
   const onSuccess = (res) => {
-    console.log("Login Success: currentUser:", res.profileObj);
+    console.log('Login Success: currentUser:', res.profileObj)
     alert(
       `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
-    );
-    setLoginStatus(true);
-    navigate("/puchase-details");
-  };
+    )
+    setLoginStatus(true)
+    navigate('/puchase-details')
+  }
 
   const onFailure = (res) => {
-    console.log("Login failed: res:", res);
+    console.log('Login failed: res:', res)
     // alert(
     //   `Failed to login. 😢 Please ping this to repo owner twitter.com/sivanesh_fiz`
     // );
     // navigate("/");
-  };
+  }
 
-  const signInGoogle = () => {};
+  const signInGoogle = () => {}
 
   // if (authService.isLoggedIn()) {
   //   // props.history.push("/home");
@@ -68,9 +68,9 @@ const Login = () => {
   //   );
   // };
   const handelAccount = (property, event) => {
-    const accountCopy = { ...account };
-    accountCopy[property] = event.target.value;
-  };
+    const accountCopy = { ...account }
+    accountCopy[property] = event.target.value
+  }
 
   const handelLogin = () => {
     // if (isVarifiedUser(account.email, account.password)) {
@@ -78,7 +78,7 @@ const Login = () => {
     //   setAccount({ email: "", password: "" });
     //   // props.history.push("/home");
     // }
-  };
+  }
   return (
     <div className="login-page">
       <Topbar />
@@ -98,7 +98,7 @@ const Login = () => {
               width={400}
               height={60}
               placeholder="Enter Your Email Address / User Name "
-              onChange={(event) => handelAccount("email", event)}
+              onChange={(event) => handelAccount('email', event)}
             ></input>
           </div>
           <div className="input-box">
@@ -111,7 +111,7 @@ const Login = () => {
               className="input-edit bb_16_thin"
               width={400}
               height={60}
-              onChange={(event) => handelAccount("password", event)}
+              onChange={(event) => handelAccount('password', event)}
               placeholder="Password "
             ></input>
           </div>
@@ -141,7 +141,7 @@ const Login = () => {
               buttonText="SIGN IN GOOGLE"
               onSuccess={onSuccess}
               onFailure={onFailure}
-              cookiePolicy={"single_host_origin"}
+              cookiePolicy={'single_host_origin'}
             />
           )}
           {loginStatus && (
@@ -158,13 +158,13 @@ const Login = () => {
             <div className="google-text">SIGN IN GOOGLE</div>
           </button> */}
           <div className="signupLink">
-            <span className="ask">DON'T HAVE AN ACCOUNT?</span>
+            <span className="ask px-1">DON'T HAVE AN ACCOUNT?</span>
             <a href="/signup">SIGN UP</a>
           </div>
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
