@@ -1,7 +1,19 @@
-import '../../assets/scss/purchaseDetails/purchaseDetailsContent.scss'
-import gameItemImage from '../../assets/images/gameItem1.png'
-
+import "../../assets/scss/purchaseDetails/purchaseDetailsContent.scss";
+import gameItemImage from "../../assets/images/gameItem1.png";
+import { connectWallet } from "../../utils/commonFunc";
+import { useEffect, useState } from "react";
 const PurchaseDetailsContent = () => {
+  const [walletStatus, setWalletStatus] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
+
+  const connectWalletButton = async () => {
+    const walletResponse = await connectWallet();
+    setWalletStatus(walletResponse.status);
+    setWalletAddress(walletResponse.address);
+    console.log("walletResponse.address", walletResponse.address);
+    console.log("walletResponse.address", walletResponse.status);
+  };
+
   return (
     <div className="purchase--detaills__container">
       <div className="bb_34">Purchase Details</div>
@@ -33,7 +45,11 @@ const PurchaseDetailsContent = () => {
               </div>
             </div>
           </div>
-          <button type="button" className="btn btn-primary btn-connect-wallet">
+          <button
+            type="button"
+            className="btn btn-primary btn-connect-wallet"
+            onClick={connectWalletButton}
+          >
             <div className="bb_16_medium">Connect wallet</div>
           </button>
         </div>
@@ -59,7 +75,7 @@ const PurchaseDetailsContent = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PurchaseDetailsContent
+export default PurchaseDetailsContent;

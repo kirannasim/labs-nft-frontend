@@ -4,20 +4,21 @@
   src: local('Revamped'), url(../../fonts/Revamped.otf) format('truetype');
 }
 
-h2 {
-  font-family: 'Revamped';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 6.125rem;
-  line-height: 7.0625rem;
-  margin: 0;
-  text-transform: uppercase;
-}
 h1 {
   font-family: 'Revamped';
   font-style: normal;
   font-weight: 400;
   font-size: 120px;
+  line-height: 8.625rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Revamped';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 6.125rem;
   line-height: 7.0625rem;
   margin: 0;
   text-transform: uppercase;
@@ -51,6 +52,32 @@ h5 {
   line-height: 1.3125rem;
   text-transform: uppercase;
   color: #ffffff;
+}
+
+.bb_14 {
+  color: #a4aac0;
+  font-family: 'Barlow';
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 2.55rem;
+}
+
+.bb_22 {
+  color: white;
+  font-family: 'Barlow';
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 1.875rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.bb_34 {
+  color: #a4aac0;
+  font-family: 'Barlow';
+  font-weight: 600;
+  font-size: 2.125rem;
+  line-height: 1.25rem;
 }
 
 .bb_16_thin {
@@ -146,4 +173,23 @@ h5 {
   letter-spacing: 7%;
   text-transform: uppercase;
   color: white;
+}
+
+.btn-primary {
+  background-color: #2043f1;
+  border-color: #2043f1;
+
+  &:hover {
+    background-color: #2043f1;
+    border-color: #2043f1;
+  }
+}
+
+.btn-outline-primary {
+  border-color: #2043f1;
+
+  &:hover {
+    background-color: #2043f1 !important;
+    border-color: #2043f1;
+  }
 }

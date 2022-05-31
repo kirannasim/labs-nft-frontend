@@ -30,6 +30,12 @@
     padding: 0 2rem;
   }
 
+  .navbar-toggler {
+    .icon {
+      color: #fff;
+    }
+  }
+
   .navbar-nav {
     margin-left: auto;
     margin-right: auto;
@@ -84,11 +90,16 @@
       right: 0;
       width: 100%;
       height: fit-content;
-      background-color: #000000bd;
+      background-color: #000000b8;
       border-radius: 0.3rem;
 
       a {
         color: white;
+      }
+
+      .bb_16_thin {
+        text-transform: unset;
+        padding: 1rem;
       }
     }
   }

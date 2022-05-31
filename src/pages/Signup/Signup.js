@@ -1,14 +1,14 @@
-import React from "react";
-import Topbar from "../../components/Topbar";
-import "../../assets/scss/login/login.scss";
-import { FiMail } from "react-icons/fi";
-import { HiKey } from "react-icons/hi";
-import { HiOutlineUserCircle } from "react-icons/hi";
-import signupImg from "../../assets/images/signup.png";
+import React from 'react'
+import Topbar from '../../components/Topbar'
+import '../../assets/scss/signup/signup.scss'
+import { FiMail } from 'react-icons/fi'
+import { HiKey } from 'react-icons/hi'
+import { HiOutlineUserCircle } from 'react-icons/hi'
+import signupImg from '../../assets/images/signup.png'
 
 const Signup = () => {
   return (
-    <div className="login-page">
+    <div className="signup-page">
       <Topbar />
       <section className="login-section">
         <div className="login">
@@ -50,32 +50,34 @@ const Signup = () => {
               className="input-edit bb_16_thin"
               width={400}
               height={60}
-              placeholder="password "
+              placeholder="Password "
             ></input>
           </div>
           <div className="remember">
-            <div className="remem">
+            <div className="remem--signup">
               <input
                 type="checkbox"
                 className="remember_check"
                 name="remember"
               />
-              <div className="rememberMe">
-                {/* I accept the terms and conditions, cookie policy and privacy
+              <div className="rememberMe--signup">
+                I accept the terms and conditions, cookie policy and privacy
                 policy. Send me vouchers and news on great promotions and the
-                latest updates, competitions and news from Look Labs. */}
+                latest updates, competitions and news from Look Labs.
               </div>
             </div>
           </div>
-          <button className="primaryBtn">SIGN UP</button>
-          <div className="signupLink">
-            <span className="ask">Already nave an account? Log in</span>
-            <a href="/signup">SIGN UP</a>
+          <button type="button" className="btn-primary primaryBtn">
+            SIGN UP
+          </button>
+          <div className="signupLink bb_18">
+            <span className="ask me-1">Already nave an account?</span>
+            <a href="/signup">LOG IN</a>
           </div>
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup

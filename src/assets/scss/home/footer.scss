@@ -5,14 +5,14 @@
 
   hr {
     width: 100%;
-    height: 2px;
-    margin: 0;
     background-image: linear-gradient(
       to right,
       #0a1544,
       #2043f1 50.31%,
       #07113e 100%
     );
+    height: 2px !important;
+    margin: 0;
   }
 
   &__title {

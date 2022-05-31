@@ -40,7 +40,7 @@ const gameItem_data = [
 
 const Feature = () => {
   return (
-    <div className="feature--container">
+    <div id="feature" className="feature--container">
       <h3 className="feature--container__heading text-center">
         Our featured Games
       </h3>

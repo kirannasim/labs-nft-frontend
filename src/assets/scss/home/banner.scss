@@ -9,6 +9,17 @@
     margin-top: 22.875rem;
     z-index: 200;
 
+    @media (max-width: 1600px) {
+      margin-top: 9.4rem;
+      text-align: left;
+    }
+
+    @media (max-width: 1400px) {
+      h3 {
+        font-size: 3rem;
+      }
+    }
+
     @media (max-width: 1024px) {
       h2 {
         font-size: 4.2rem;
@@ -24,6 +35,13 @@
       }
       .BB_34 {
         font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 425px) {
+      h3 {
+        font-size: 1.5rem;
+        line-height: 2rem;
       }
     }
 
