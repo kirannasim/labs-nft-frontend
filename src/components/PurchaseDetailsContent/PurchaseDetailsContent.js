@@ -11,11 +11,19 @@ const PurchaseDetailsContent = () => {
     setWalletStatus(walletResponse.status);
     setWalletAddress(walletResponse.address);
     console.log("walletResponse.address", walletResponse.address);
-    console.log("walletResponse.address", walletResponse.status);
+    console.log("walletResponse.status", walletResponse.status);
+    console.log("walletResponse.balance", walletResponse.balance);
 
     if (!walletResponse.address) {
       alert("Please install metamask.");
+    } else {
+      alert("connected your wallet successfully");
     }
+  };
+
+  const disconnectWalletButton = async () => {
+    setWalletAddress("");
+    setWalletStatus("");
   };
 
   return (
@@ -49,12 +57,26 @@ const PurchaseDetailsContent = () => {
               </div>
             </div>
           </div>
+
           <button
             type="button"
             className="btn btn-primary btn-connect-wallet"
-            onClick={connectWalletButton}
+            onClick={
+              walletAddress ? disconnectWalletButton : connectWalletButton
+            }
           >
-            <div className="bb_16_medium">Connect wallet</div>
+            <div className="bb_16_medium">
+              {walletAddress ? (
+                <>
+                  <span className="wallet--address">
+                    {walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}
+                  </span>{" "}
+                  Disconnect
+                </>
+              ) : (
+                "Connect wallet"
+              )}
+            </div>
           </button>
         </div>
         <div className="purchase--card">

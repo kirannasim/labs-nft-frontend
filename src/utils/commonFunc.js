@@ -29,7 +29,7 @@ export const connectWallet = async () => {
   if (window.ethereum) {
     try {
       const chain = await window.ethereum.request({ method: "eth_chainId" });
-      if (parseInt(chain, 1) == chainId) {
+      if (parseInt(chain, 16) == chainId) {
         const addressArray = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
