@@ -19,7 +19,7 @@ export const nav_menus_unlogined = [
   },
   {
     name: 'nodes',
-    href: '/nodes',
+    href: '/mynodes',
     is_react_router: true,
     is_new_target: false,
   },
@@ -46,13 +46,13 @@ export const nav_menus_logined = [
   },
   {
     name: 'my node',
-    href: '/my node',
+    href: '/mynodes',
     is_react_router: true,
     is_new_target: false,
   },
   {
     name: 'my account',
-    href: '/my account',
+    href: '/account-details',
     is_react_router: true,
     is_new_target: false,
   },

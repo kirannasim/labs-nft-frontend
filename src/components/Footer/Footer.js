@@ -12,7 +12,7 @@ const Node = () => {
   return (
     <div className="footer--container">
       <div className="footer--container__title">
-        <img src={footerLogoImage} />
+        <img src={footerLogoImage} alt="footer logo" />
       </div>
       <hr></hr>
       <div className="footer--container__menu row">
@@ -35,6 +35,7 @@ const Node = () => {
               className="nav-link menu-item bb_16_medium col-6 col-md-4 col-lg-2"
               href={item.href}
               target={item.is_new_target ? '_blank' : null}
+              rel="noreferrer"
             >
               {item.name}
             </a>
@@ -50,22 +51,22 @@ const Node = () => {
         </div>
         <div className="social--wrapper">
           <div className="social-item">
-            <a href="https://facebook.com" target="_blank">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
               <img src={facebookIcon} alt="facebook icon" />
             </a>
           </div>
           <div className="social-item">
-            <a href="https://twitter.com" target="_blank">
+            <a href="https://twitter.com" target="_blank" rel="noreferrer">
               <img src={twitterIcon} alt="twitter icon" />
             </a>
           </div>
           <div className="social-item">
-            <a href="https://instagram.com" target="_blank">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
               <img src={instagramIcon} alt="instagram icon" />
             </a>
           </div>
           <div className="social-item">
-            <a href="https://discord.com" target="_blank">
+            <a href="https://discord.com" target="_blank" rel="noreferrer">
               <img src={discordIcon} alt="discord" />
             </a>
           </div>

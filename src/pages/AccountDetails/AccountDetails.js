@@ -1,9 +1,8 @@
-import React from "react";
-import Topbar from "../../components/Topbar";
-import AccountEdit from "../../components/AccountEdit";
-import Footer from "../../components/Footer";
-// import "../../assets/scss/home/home.scss";
-import "../../assets/scss/accountEdit/accountEdit.scss";
+import React from 'react'
+import Topbar from '../../components/Topbar'
+import AccountEdit from '../../components/AccountEdit'
+import Footer from '../../components/Footer'
+import '../../assets/scss/accountEdit/accountEdit.scss'
 
 const AccountDetails = () => {
   return (
@@ -12,7 +11,7 @@ const AccountDetails = () => {
       <AccountEdit />
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default AccountDetails;
+export default AccountDetails

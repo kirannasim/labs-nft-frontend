@@ -1,8 +1,8 @@
-import rect1 from "../../assets/images/rect1.png";
-import rect2 from "../../assets/images/rect2.png";
-import rect4 from "../../assets/images/rect4.png";
-import rect31 from "../../assets/images/rect31.png";
-import rect32 from "../../assets/images/rect32.png";
+import rect1 from '../../assets/images/rect1.png'
+import rect2 from '../../assets/images/rect2.png'
+import rect4 from '../../assets/images/rect4.png'
+import rect31 from '../../assets/images/rect31.png'
+import rect32 from '../../assets/images/rect32.png'
 const NodeCards = () => {
   return (
     <section className="nodecards">
@@ -31,12 +31,12 @@ const NodeCards = () => {
         </div>
       </div>
       <div className="addItemBtn">
-        <button type="button" className="addBtn">
+        <button type="button" className="addBtn bb_16_medium">
           ADDITEM
         </button>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default NodeCards;
+export default NodeCards
