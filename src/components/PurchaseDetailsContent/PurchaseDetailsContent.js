@@ -12,6 +12,10 @@ const PurchaseDetailsContent = () => {
     setWalletAddress(walletResponse.address);
     console.log("walletResponse.address", walletResponse.address);
     console.log("walletResponse.address", walletResponse.status);
+
+    if (!walletResponse.address) {
+      alert("Please install metamask.");
+    }
   };
 
   return (
