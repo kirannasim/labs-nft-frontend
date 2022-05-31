@@ -12,17 +12,13 @@ import PurchaPurchaseDetails from "../pages/PurchaseDetails/PurchaseDetails";
 const Routers = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route exact path="/" element={<Login />} />
       <Route exact path="/home" element={<Home />} />
       <Route exact path="/login" element={<Login />} />
       <Route exact path="/signup" element={<Signup />} />
-      <Route exact path="/account-details" element={<AccountDetails />} />
+      <Route exact path="/about" element={<AccountDetails />} />
       <Route exact path="/mynodes" element={<MyNodes />} />
-      <Route
-        exact
-        path="/purchase-details"
-        element={<PurchaPurchaseDetails />}
-      />
+      <Route exact path="/games" element={<PurchaPurchaseDetails />} />
     </Routes>
   );
 };
