@@ -139,6 +139,7 @@
         justify-content: space-between;
         @media (max-width: 1400px) {
           height: 550px;
+          flex-direction: row;
         }
         .card31 {
           width: 100%;
