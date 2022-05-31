@@ -12,7 +12,7 @@ import PurchaPurchaseDetails from "../pages/PurchaseDetails/PurchaseDetails";
 const Routers = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Login />} />
+      <Route exact path="/" element={<Home />} />
       <Route exact path="/home" element={<Home />} />
       <Route exact path="/login" element={<Login />} />
       <Route exact path="/signup" element={<Signup />} />
