@@ -1,30 +1,33 @@
-import "../../assets/scss/purchaseDetails/purchaseDetailsContent.scss";
-import gameItemImage from "../../assets/images/gameItem1.png";
-import { connectWallet } from "../../utils/commonFunc";
-import { useEffect, useState } from "react";
+import '../../assets/scss/purchaseDetails/purchaseDetailsContent.scss'
+import gameItemImage from '../../assets/images/gameItem1.png'
+import { connectWallet } from '../../utils/commonFunc'
+import { useEffect, useState } from 'react'
+
 const PurchaseDetailsContent = () => {
-  const [walletStatus, setWalletStatus] = useState("");
-  const [walletAddress, setWalletAddress] = useState("");
+  const [walletStatus, setWalletStatus] = useState('')
+  const [walletAddress, setWalletAddress] = useState('')
 
   const connectWalletButton = async () => {
-    const walletResponse = await connectWallet();
-    setWalletStatus(walletResponse.status);
-    setWalletAddress(walletResponse.address);
-    console.log("walletResponse.address", walletResponse.address);
-    console.log("walletResponse.status", walletResponse.status);
-    console.log("walletResponse.balance", walletResponse.balance);
+    const walletResponse = await connectWallet()
+    setWalletStatus(walletResponse.status)
+    setWalletAddress(walletResponse.address)
+    console.log('walletResponse.address', walletResponse.address)
+    console.log('walletResponse.status', walletResponse.status)
+    console.log('walletResponse.balance', walletResponse.balance)
 
     if (!walletResponse.address) {
-      alert("Please install metamask.");
+      if (walletResponse.status == 'uninstalled') {
+        alert('Please install Metamask')
+      }
     } else {
-      alert("connected your wallet successfuly");
+      alert('Successfully Connected')
     }
-  };
+  }
 
   const disconnectWalletButton = async () => {
-    setWalletAddress("");
-    setWalletStatus("");
-  };
+    setWalletAddress('')
+    setWalletStatus('')
+  }
 
   return (
     <div className="purchase--detaills__container">
@@ -70,11 +73,11 @@ const PurchaseDetailsContent = () => {
                 <>
                   <span className="wallet--address">
                     {walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}
-                  </span>{" "}
+                  </span>{' '}
                   Disconnect
                 </>
               ) : (
-                "Connect wallet"
+                'Connect wallet'
               )}
             </div>
           </button>
@@ -101,7 +104,7 @@ const PurchaseDetailsContent = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PurchaseDetailsContent;
+export default PurchaseDetailsContent

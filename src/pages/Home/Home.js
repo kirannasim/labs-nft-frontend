@@ -21,7 +21,7 @@ const Home = () => {
   }, [loginStatus])
   return (
     <div className="home-page">
-      <Topbar loginStatus={false} />
+      <Topbar />
       <Banner />
       <Feature />
       <Node />

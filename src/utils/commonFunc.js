@@ -49,18 +49,7 @@ export const connectWallet = async () => {
     console.log('new window')
     return {
       address: '',
-      status: (
-        <span style={{ color: 'red !important' }}>
-          <p>
-            {' '}
-            🦊{' '}
-            <a target="_blank" href={`https://metamask.io/download.html`}>
-              You must install Metamask, a virtual Ethereum wallet, in your
-              browser.(https://metamask.io/download.html)
-            </a>
-          </p>
-        </span>
-      ),
+      status: 'uninstalled',
     }
   }
 }

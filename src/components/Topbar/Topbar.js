@@ -5,12 +5,12 @@ import logoImgage from '../../assets/images/logo.png'
 import loginRightIconImage from '../../assets/images/loginRightIcon.svg'
 import '../../assets/scss/home/topbar.scss'
 import { nav_menus_unlogined, nav_menus_logined } from '../../utils/public'
-import { FiMenu } from 'react-icons/fi'
+import { FiMenu, FiLogOut, FiEdit } from 'react-icons/fi'
 import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const Topbar = () => {
   const { logout } = useAuth0()
-  const { loginStatus, setLoginStatus } = useContext(LoginStatusContext)
+  const { loginStatus, setLoginStatus, user } = useContext(LoginStatusContext)
 
   return (
     <nav className="navbar navbar-expand-xl navbar-light fixed-top">
@@ -81,9 +81,11 @@ const Topbar = () => {
                 data-bs-toggle="collapse"
                 data-bs-target="#collapse_conent"
               >
-                <div className="login--container__image--wapper"></div>
+                <div className="login--container__image--wapper">
+                  <img src={user.picture} alt="user" />
+                </div>
                 <span className="login--container__user--name bb_16_thin">
-                  Linthang Chang
+                  {user.nickname}
                 </span>
                 <div className="login--container__toggole--button">
                   <img alt="login Right Icon" src={loginRightIconImage} />
@@ -92,12 +94,18 @@ const Topbar = () => {
                   id="collapse_conent"
                   className="collapse login--container__collapse--content"
                 >
-                  <Link to="/account-details">
-                    <p className="bb_16_thin">My Account</p>
-                  </Link>
-                  <p className="bb_16_thin logout" onClick={logout}>
-                    Sign Out
-                  </p>
+                  <div className="submenu--wrapper">
+                    <FiEdit />
+                    <Link to="/account-details">
+                      <p className="bb_16_thin">My Account</p>
+                    </Link>
+                  </div>
+                  <div className="submenu--wrapper">
+                    <FiLogOut />
+                    <p className="bb_16_thin logout" onClick={logout}>
+                      Sign Out
+                    </p>
+                  </div>
                 </div>
               </div>
             )}

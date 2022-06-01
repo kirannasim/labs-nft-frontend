@@ -16,7 +16,7 @@ function App() {
   }, [isAuthenticated])
 
   return (
-    <LoginStatusContext.Provider value={{ loginStatus, setLoginStatus }}>
+    <LoginStatusContext.Provider value={{ loginStatus, setLoginStatus, user }}>
       <BrowserRouter>
         <Layout />
       </BrowserRouter>
