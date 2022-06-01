@@ -17,7 +17,7 @@ const PurchaseDetailsContent = () => {
     if (!walletResponse.address) {
       alert("Please install metamask.");
     } else {
-      alert("connected your wallet successfully");
+      alert("connected your wallet successfuly");
     }
   };
 
