@@ -37,7 +37,7 @@ const AccountEdit = () => {
                 *It’s Contain atleast 4 Character,1 Symbol and others Numeric.
               </div>
             </div>
-            <button className="signup px-1 px-xxl-0">SIGN UP</button>
+            <button className="signup px-1 px-xxl-0">Change</button>
           </div>
           <div className="notify-offline">
             <input className="notify-check" type="checkbox" />
