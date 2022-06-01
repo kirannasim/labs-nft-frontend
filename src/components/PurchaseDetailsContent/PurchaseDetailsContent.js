@@ -11,9 +11,6 @@ const PurchaseDetailsContent = () => {
     const walletResponse = await connectWallet()
     setWalletStatus(walletResponse.status)
     setWalletAddress(walletResponse.address)
-    console.log('walletResponse.address', walletResponse.address)
-    console.log('walletResponse.status', walletResponse.status)
-    console.log('walletResponse.balance', walletResponse.balance)
 
     if (!walletResponse.address) {
       if (walletResponse.status == 'uninstalled') {
@@ -25,12 +22,6 @@ const PurchaseDetailsContent = () => {
   }
 
   const disconnectWalletButton = async () => {
-    // window.web3 = await new window.Moralis.Web3.enable({
-    //   provider: 'walletconnect',
-    // })
-
-    // await window.web3.eth.currentProvider.disconnect()
-    // await window.Moralis.Web3.cleanup()
     setWalletAddress('')
     setWalletStatus('')
   }
@@ -73,8 +64,9 @@ const PurchaseDetailsContent = () => {
             onClick={
               walletAddress ? disconnectWalletButton : connectWalletButton
             }
+            disabled={walletAddress ? true : false}
           >
-            <div className="bb_16_medium">
+            {/* <div className="bb_16_medium">
               {walletAddress ? (
                 <>
                   <span className="wallet--address">
@@ -85,7 +77,8 @@ const PurchaseDetailsContent = () => {
               ) : (
                 'Connect wallet'
               )}
-            </div>
+            </div> */}
+            <div className="bb_16_medium">Connect wallet</div>
           </button>
         </div>
         <div className="purchase--card">

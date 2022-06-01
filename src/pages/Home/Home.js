@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 import Topbar from '../../components/Topbar'
 import Banner from '../../components/Banner'
 import Feature from '../../components/Feature'
@@ -10,6 +11,7 @@ import '../../assets/scss/home/home.scss'
 import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const Home = () => {
+  const { getAccessTokenSilently } = useAuth0()
   const { loginStatus, setLoginStatus } = useContext(LoginStatusContext)
   const navigate = useNavigate()
 
@@ -19,6 +21,7 @@ const Home = () => {
       navigate('/purchase-details')
     }
   }, [loginStatus])
+
   return (
     <div className="home-page">
       <Topbar />
