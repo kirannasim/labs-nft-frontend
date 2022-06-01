@@ -67,6 +67,7 @@
     width: 100%;
     position: relative;
     display: flex;
+    cursor: pointer;
 
     &__image--wapper {
       background-color: #c4c4c4;
@@ -106,6 +107,7 @@
       .bb_16_thin {
         text-transform: unset;
         padding: 1rem;
+        cursor: pointer;
       }
     }
   }
@@ -125,7 +127,6 @@
 
     @media (max-width: 991px) {
       margin-top: 10px;
-      // display: none;
     }
   }
 }

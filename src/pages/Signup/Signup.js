@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router-dom'
 import Topbar from '../../components/Topbar'
-import '../../assets/scss/signup/signup.scss'
 import { FiMail } from 'react-icons/fi'
 import { HiKey } from 'react-icons/hi'
 import { HiOutlineUserCircle } from 'react-icons/hi'
+import { LoginStatusContext } from '../../context/LoginStatusContext'
 import signupImg from '../../assets/images/signup.png'
+import '../../assets/scss/signup/signup.scss'
 
 const Signup = () => {
+  const navigate = useNavigate()
+
+  const { user, isAuthenticated, isLoading, logout, loginWithRedirect } =
+    useAuth0()
+
+  const { loginStatus, setLoginStatus } = useContext(LoginStatusContext)
+
+  const singINGoogle = () => {
+    loginWithRedirect()
+    if (isAuthenticated) {
+      setLoginStatus(true)
+      navigate('/mynodes')
+    } else {
+      setLoginStatus(false)
+    }
+  }
+
   return (
     <div className="signup-page">
       <Topbar />
@@ -67,7 +87,11 @@ const Signup = () => {
               </div>
             </div>
           </div>
-          <button type="button" className="btn-primary primaryBtn">
+          <button
+            type="button"
+            className="btn-primary primaryBtn"
+            onClick={singINGoogle}
+          >
             SIGN UP
           </button>
           <div className="signupLink bb_18">

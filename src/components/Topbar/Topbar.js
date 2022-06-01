@@ -8,8 +8,9 @@ import { nav_menus_unlogined, nav_menus_logined } from '../../utils/public'
 import { FiMenu } from 'react-icons/fi'
 import { LoginStatusContext } from '../../context/LoginStatusContext'
 
-const Topbar = ({ loginStatus }) => {
+const Topbar = () => {
   const { logout } = useAuth0()
+  const { loginStatus, setLoginStatus } = useContext(LoginStatusContext)
 
   return (
     <nav className="navbar navbar-expand-xl navbar-light fixed-top">
@@ -94,9 +95,9 @@ const Topbar = ({ loginStatus }) => {
                   <Link to="/account-details">
                     <p className="bb_16_thin">My Account</p>
                   </Link>
-                  <button className="bb_16_thin" onClick={logout}>
+                  <p className="bb_16_thin logout" onClick={logout}>
                     Sign Out
-                  </button>
+                  </p>
                 </div>
               </div>
             )}

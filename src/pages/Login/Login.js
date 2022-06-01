@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Topbar from '../../components/Topbar'
 import { FiMail } from 'react-icons/fi'
@@ -7,43 +7,36 @@ import { useAuth0 } from '@auth0/auth0-react'
 import google from '../../assets/icon/google.svg'
 import loginImg from '../../assets/images/login.png'
 import '../../assets/scss/login/login.scss'
-
-const clientId =
-  '498758921859-o179v4o7ub530vdsjld75qjd2o1uf3li.apps.googleusercontent.com'
-
-// refresh token
-// import { refreshTokenSetup } from "./data/refreshToken";
-
-// import users from "./data/users";
-// import authService from "./service/authService";
+import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const Login = () => {
   const navigate = useNavigate()
   const { user, isAuthenticated, isLoading, logout, loginWithRedirect } =
     useAuth0()
+
   const [account, setAccount] = useState({ email: '', password: '' })
 
   const { loginStatus, setLoginStatus } = useContext(LoginStatusContext)
 
+  useEffect(() => {
+    if (loginStatus) {
+      navigate('/mynodes')
+    }
+  }, [loginStatus])
+
   const singINGoogle = () => {
     loginWithRedirect()
-    console.log('first')
     if (isAuthenticated) {
+      setLoginStatus(true)
       navigate('/mynodes')
     } else {
+      setLoginStatus(false)
       navigate('/login')
     }
-    // getprofile();
   }
 
   const getprofile = () => {
     isAuthenticated && alert(user.name)
-    // alert(user.email);
-    // <div>
-    //   <img src={user.picture} alt={user.name} />
-    //   <h2>{user.name}</h2>
-    //   <p>{user.email}</p>
-    // </div>
   }
 
   if (isLoading) {
@@ -55,12 +48,6 @@ const Login = () => {
     accountCopy[property] = event.target.value
   }
 
-  const handelLogin = () => {
-    if (isAuthenticated) {
-      alert(user.email)
-      navigate('/mynodes')
-    }
-  }
   return (
     <div className="login-page">
       <Topbar />
@@ -111,7 +98,7 @@ const Login = () => {
 
           <button
             className="btn-primary primaryBtn bb_18"
-            onClick={handelLogin}
+            onClick={singINGoogle}
           >
             LOG IN
           </button>
