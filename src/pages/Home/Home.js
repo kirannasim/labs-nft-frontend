@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     console.log(loginStatus)
     if (loginStatus) {
-      navigate('/purchase-details')
+      // navigate('/purchase-details')
     }
   }, [loginStatus])
   return (
