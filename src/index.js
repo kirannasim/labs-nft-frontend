@@ -17,7 +17,7 @@ root.render(
       domain="dev---utwscq.us.auth0.com"
       clientId="DpGvdcZFYxn33xajjb4gtliuG0yS6wSK"
       redirectUri={window.location.origin}
-      audience={REACT_APP_baseUrl}
+      audience={process.env.REACT_APP_baseUrl}
       scope="read:get_stats"
     >
       <App />

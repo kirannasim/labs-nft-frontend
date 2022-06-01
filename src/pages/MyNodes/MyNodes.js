@@ -23,11 +23,11 @@ const MyNodes = () => {
     ;(async () => {
       try {
         const token = await getAccessTokenSilently({
-          audience: REACT_APP_appUrl,
+          audience: process.env.REACT_APP_appUrl,
           scope: 'read:get_stats',
         })
         axios
-          .get(REACT_APP_baseUrl + '/users/stats', {
+          .get(process.env.REACT_APP_baseUrl + '/users/stats', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
