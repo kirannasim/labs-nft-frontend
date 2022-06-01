@@ -95,12 +95,6 @@ const Topbar = () => {
                   className="collapse login--container__collapse--content"
                 >
                   <div className="submenu--wrapper">
-                    <FiEdit />
-                    <Link to="/account-details">
-                      <p className="bb_16_thin">My Account</p>
-                    </Link>
-                  </div>
-                  <div className="submenu--wrapper">
                     <FiLogOut />
                     <p className="bb_16_thin logout" onClick={logout}>
                       Sign Out
