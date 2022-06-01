@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Topbar from '../../components/Topbar'
 import { FiMail } from 'react-icons/fi'
@@ -8,6 +8,7 @@ import loginImg from '../../assets/images/login.png'
 import '../../assets/scss/login/login.scss'
 // Oauth google login part
 import { GoogleLogin, GoogleLogout } from 'react-google-login'
+import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const clientId =
   '498758921859-o179v4o7ub530vdsjld75qjd2o1uf3li.apps.googleusercontent.com'
@@ -24,7 +25,7 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [url, setUrl] = useState('')
 
-  const [loginStatus, setLoginStatus] = useState(false)
+  const { loginStatus, setLoginStatus } = useContext(LoginStatusContext)
   const [account, setAccount] = useState({ email: '', password: '' })
 
   const responseGoogle = (response) => {

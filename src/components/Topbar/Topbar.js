@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import logoImgage from '../../assets/images/logo.png'
 import loginRightIconImage from '../../assets/images/loginRightIcon.svg'
 import '../../assets/scss/home/topbar.scss'
 import { nav_menus_unlogined, nav_menus_logined } from '../../utils/public'
 import { FiMenu } from 'react-icons/fi'
+import { LoginStatusContext } from '../../context/LoginStatusContext'
 
-const Topbar = ({ loginStatus }) => {
+const Topbar = () => {
+  const { loginStatus } = useContext(LoginStatusContext)
+
+  console.log('dfasfdsa', loginStatus)
+
   return (
     <nav className="navbar navbar-expand-xl navbar-light fixed-top">
       <div className="navbar-container">
@@ -53,13 +58,13 @@ const Topbar = ({ loginStatus }) => {
                 )
             )}
           </ul>
-          <div className="d-flex">
+          <div className="d-flex buttons">
             {!loginStatus ? (
               <>
                 <Link to="/login">
                   <button
                     type="button"
-                    className="btn btn-outline-primary topbar--btn"
+                    className="btn btn-outline-primary topbar--btn btn--login"
                   >
                     Login
                   </button>
