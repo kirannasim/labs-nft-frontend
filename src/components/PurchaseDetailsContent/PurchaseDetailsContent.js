@@ -30,7 +30,7 @@ const PurchaseDetailsContent = () => {
     // })
 
     // await window.web3.eth.currentProvider.disconnect()
-    await window.Moralis.Web3.cleanup()
+    // await window.Moralis.Web3.cleanup()
     setWalletAddress('')
     setWalletStatus('')
   }
