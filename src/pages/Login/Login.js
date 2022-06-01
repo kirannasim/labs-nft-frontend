@@ -96,7 +96,12 @@ const Login = () => {
             <span className="forgot">Forgot Password?</span>
           </div>
 
-          <button className="btn-primary primaryBtn bb_18">LOG IN</button>
+          <button
+            className="btn-primary primaryBtn bb_18"
+            onClick={singINGoogle}
+          >
+            LOG IN
+          </button>
           <button className="signInGoogle" onClick={singINGoogle}>
             <img src={google} />
             <div className="google-text">SIGN IN GOOGLE</div>

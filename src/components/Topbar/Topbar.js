@@ -15,9 +15,9 @@ const Topbar = () => {
   return (
     <nav className="navbar navbar-expand-xl navbar-light fixed-top">
       <div className="navbar-container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/home">
           <img src={logoImgage} alt="Logo" />
-        </a>
+        </Link>
         <div
           className="navbar-toggler"
           data-bs-toggle="collapse"

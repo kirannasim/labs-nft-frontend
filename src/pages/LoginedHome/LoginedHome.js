@@ -9,16 +9,7 @@ import Footer from '../../components/Footer'
 import '../../assets/scss/home/home.scss'
 import { LoginStatusContext } from '../../context/LoginStatusContext'
 
-const Home = () => {
-  const { loginStatus, setLoginStatus } = useContext(LoginStatusContext)
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    console.log(loginStatus)
-    if (loginStatus) {
-      navigate('/purchase-details')
-    }
-  }, [loginStatus])
+const LoginedHome = () => {
   return (
     <div className="home-page">
       <Topbar />
@@ -30,4 +21,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default LoginedHome
