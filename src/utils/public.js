@@ -7,8 +7,8 @@ export const nav_menus_unlogined = [
   },
   {
     name: 'about',
-    href: '/home',
-    is_react_router: false,
+    href: '/',
+    is_react_router: true,
     is_new_target: false,
   },
   {

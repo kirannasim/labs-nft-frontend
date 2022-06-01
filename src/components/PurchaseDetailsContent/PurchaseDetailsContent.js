@@ -25,6 +25,12 @@ const PurchaseDetailsContent = () => {
   }
 
   const disconnectWalletButton = async () => {
+    // window.web3 = await new window.Moralis.Web3.enable({
+    //   provider: 'walletconnect',
+    // })
+
+    // await window.web3.eth.currentProvider.disconnect()
+    await window.Moralis.Web3.cleanup()
     setWalletAddress('')
     setWalletStatus('')
   }
