@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import Layout from './pages/Layout'
-import Routers from './routes'
+import { LoginStatusContext } from './context/LoginStatusContext'
 
 function App() {
+  const [loginStatus, setLoginStatus] = useState(false)
   return (
-    <BrowserRouter>
-      <Layout />
-    </BrowserRouter>
+    <LoginStatusContext.Provider value={{ loginStatus, setLoginStatus }}>
+      <BrowserRouter>
+        <Layout />
+      </BrowserRouter>
+    </LoginStatusContext.Provider>
   )
 }
 

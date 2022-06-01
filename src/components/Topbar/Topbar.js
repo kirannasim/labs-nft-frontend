@@ -1,14 +1,16 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import logoImgage from "../../assets/images/logo.png";
-import loginRightIconImage from "../../assets/images/loginRightIcon.svg";
-import "../../assets/scss/home/topbar.scss";
-import { nav_menus_unlogined, nav_menus_logined } from "../../utils/public";
-import { FiMenu } from "react-icons/fi";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { useContext } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
+import logoImgage from '../../assets/images/logo.png'
+import loginRightIconImage from '../../assets/images/loginRightIcon.svg'
+import '../../assets/scss/home/topbar.scss'
+import { nav_menus_unlogined, nav_menus_logined } from '../../utils/public'
+import { FiMenu } from 'react-icons/fi'
+import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const Topbar = ({ loginStatus }) => {
-  const { logout } = useAuth0();
+  const { logout } = useAuth0()
+
   return (
     <nav className="navbar navbar-expand-xl navbar-light fixed-top">
       <div className="navbar-container">
@@ -35,7 +37,7 @@ const Topbar = ({ loginStatus }) => {
                   <NavLink
                     to={item.href}
                     className={(isActive) =>
-                      "nav-link" + (!isActive ? " unselected" : "")
+                      'nav-link' + (!isActive ? ' unselected' : '')
                     }
                     key={item.name}
                   >
@@ -46,7 +48,7 @@ const Topbar = ({ loginStatus }) => {
                     <a
                       className="nav-link"
                       href={item.href}
-                      target={item.is_new_target ? "_blank" : null}
+                      target={item.is_new_target ? '_blank' : null}
                       rel="noreferrer"
                     >
                       {item.name}
@@ -55,13 +57,13 @@ const Topbar = ({ loginStatus }) => {
                 )
             )}
           </ul>
-          <div className="d-flex">
+          <div className="d-flex buttons">
             {!loginStatus ? (
               <>
                 <Link to="/login">
                   <button
                     type="button"
-                    className="btn btn-outline-primary topbar--btn"
+                    className="btn btn-outline-primary topbar--btn btn--login"
                   >
                     Login
                   </button>
@@ -102,7 +104,7 @@ const Topbar = ({ loginStatus }) => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Topbar;
+export default Topbar

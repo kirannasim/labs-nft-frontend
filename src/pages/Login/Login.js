@@ -1,17 +1,15 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Topbar from "../../components/Topbar";
-import { FiMail } from "react-icons/fi";
-import { HiKey } from "react-icons/hi";
-import google from "../../assets/icon/google.svg";
-import loginImg from "../../assets/images/login.png";
-import "../../assets/scss/login/login.scss";
-// Oauth google login part
-// import { GoogleLogin, GoogleLogout } from "react-google-login";
-// import SignInGoogle from "./SignInGoogle";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Topbar from '../../components/Topbar'
+import { FiMail } from 'react-icons/fi'
+import { HiKey } from 'react-icons/hi'
+import { useAuth0 } from '@auth0/auth0-react'
+import google from '../../assets/icon/google.svg'
+import loginImg from '../../assets/images/login.png'
+import '../../assets/scss/login/login.scss'
+
 const clientId =
-  "498758921859-o179v4o7ub530vdsjld75qjd2o1uf3li.apps.googleusercontent.com";
+  '498758921859-o179v4o7ub530vdsjld75qjd2o1uf3li.apps.googleusercontent.com'
 
 // refresh token
 // import { refreshTokenSetup } from "./data/refreshToken";
@@ -20,51 +18,49 @@ const clientId =
 // import authService from "./service/authService";
 
 const Login = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const { user, isAuthenticated, isLoading, logout, loginWithRedirect } =
-    useAuth0();
-  const [account, setAccount] = useState({ email: "", password: "" });
+    useAuth0()
+  const [account, setAccount] = useState({ email: '', password: '' })
 
-  const logOut = () => {
-    logout({ returnTo: window.location.origin });
-  };
+  const { loginStatus, setLoginStatus } = useContext(LoginStatusContext)
 
   const singINGoogle = () => {
-    loginWithRedirect();
-    console.log("first");
+    loginWithRedirect()
+    console.log('first')
     if (isAuthenticated) {
-      navigate("/mynodes");
+      navigate('/mynodes')
     } else {
-      navigate("/login");
+      navigate('/login')
     }
     // getprofile();
-  };
+  }
 
   const getprofile = () => {
-    isAuthenticated && alert(user.name);
+    isAuthenticated && alert(user.name)
     // alert(user.email);
     // <div>
     //   <img src={user.picture} alt={user.name} />
     //   <h2>{user.name}</h2>
     //   <p>{user.email}</p>
     // </div>
-  };
+  }
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <div>Loading ...</div>
   }
 
   const handelAccount = (property, event) => {
-    const accountCopy = { ...account };
-    accountCopy[property] = event.target.value;
-  };
+    const accountCopy = { ...account }
+    accountCopy[property] = event.target.value
+  }
 
   const handelLogin = () => {
     if (isAuthenticated) {
-      alert(user.email);
-      navigate("/mynodes");
+      alert(user.email)
+      navigate('/mynodes')
     }
-  };
+  }
   return (
     <div className="login-page">
       <Topbar />
@@ -84,7 +80,7 @@ const Login = () => {
               width={400}
               height={60}
               placeholder="Enter Your Email Address / User Name "
-              onChange={(event) => handelAccount("email", event)}
+              onChange={(event) => handelAccount('email', event)}
             ></input>
           </div>
           <div className="input-box">
@@ -97,7 +93,7 @@ const Login = () => {
               className="input-edit bb_16_thin"
               width={400}
               height={60}
-              onChange={(event) => handelAccount("password", event)}
+              onChange={(event) => handelAccount('password', event)}
               placeholder="Password "
             ></input>
           </div>
@@ -131,7 +127,7 @@ const Login = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
