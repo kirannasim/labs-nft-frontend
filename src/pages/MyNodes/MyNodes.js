@@ -40,7 +40,7 @@ const MyNodes = () => {
         console.error(e)
       }
     })()
-  }, [getAccessTokenSilently, user.sub])
+  }, [getAccessTokenSilently, user?.sub])
 
   return (
     <div className="full-container">
