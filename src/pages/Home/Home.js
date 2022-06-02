@@ -41,11 +41,11 @@ const Home = () => {
 
   const navigate = useNavigate()
 
-  // useEffect(() => {
-  //   if (loginStatus) {
-  //     navigate('/purchase-details')
-  //   }
-  // }, [loginStatus])
+  useEffect(() => {
+    if (loginStatus) {
+      navigate('/purchase-details')
+    }
+  }, [loginStatus])
 
   return (
     <div className="home-page">
