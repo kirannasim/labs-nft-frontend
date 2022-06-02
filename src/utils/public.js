@@ -40,7 +40,7 @@ export const nav_menus_unlogined = [
 export const nav_menus_logined = [
   {
     name: 'home',
-    href: '/logined-home',
+    href: '/purchase-details',
     is_react_router: true,
     is_new_target: false,
   },

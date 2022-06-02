@@ -21,7 +21,7 @@ const Topbar = () => {
   return (
     <nav className="navbar navbar-expand-xl navbar-light fixed-top">
       <div className="navbar-container">
-        <Link className="navbar-brand" to="/home">
+        <Link className="navbar-brand" to="/logined-home">
           <img src={logoImgage} alt="Logo" />
         </Link>
         <div

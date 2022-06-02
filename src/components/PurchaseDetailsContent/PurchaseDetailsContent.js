@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 const PurchaseDetailsContent = () => {
   const [walletStatus, setWalletStatus] = useState('')
   const [walletAddress, setWalletAddress] = useState('')
+  console.log('walletAddress', walletAddress)
 
   const connectWalletButton = async () => {
     const walletResponse = await connectWallet()
@@ -64,9 +65,9 @@ const PurchaseDetailsContent = () => {
             onClick={
               walletAddress ? disconnectWalletButton : connectWalletButton
             }
-            disabled={walletAddress ? true : false}
+            // disabled={walletAddress ? true : false}
           >
-            {/* <div className="bb_16_medium">
+            <div className="bb_16_medium">
               {walletAddress ? (
                 <>
                   <span className="wallet--address">
@@ -77,8 +78,8 @@ const PurchaseDetailsContent = () => {
               ) : (
                 'Connect wallet'
               )}
-            </div> */}
-            <div className="bb_16_medium">Connect wallet</div>
+            </div>
+            {/* <div className="bb_16_medium">Connect wallet</div> */}
           </button>
         </div>
         <div className="purchase--card">
