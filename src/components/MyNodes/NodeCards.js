@@ -8,7 +8,12 @@ const NodeCards = ({ userStats }) => {
           {/* <div className="card-value">125.1248</div> */}
         </div>
         <div className="card2">
-          <div className="card-title">$Total Node Account</div>
+          <div className="card-title">
+            <div>$Total Node Account</div>
+            <div className="goal--progress__percent">
+              {userStats?.goalProgressPercent}&nbsp;%
+            </div>
+          </div>
           <div className="card-value">{userStats?.totalNodeCount}</div>
           {/* <div className="card-value">125.1248</div> */}
         </div>
