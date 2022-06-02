@@ -27,9 +27,12 @@ const Login = () => {
   const singINGoogle = () => {
     loginWithRedirect()
     if (isAuthenticated) {
+      console.log('loginstatus', loginStatus)
       setLoginStatus(true)
       navigate('/mynodes')
     } else {
+      console.log('loginstatus', loginStatus)
+
       setLoginStatus(false)
       navigate('/login')
     }

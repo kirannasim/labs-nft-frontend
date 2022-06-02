@@ -9,8 +9,6 @@ export const getSigner = () => {
 export const connectWallet = async () => {
   const chainId = process.env.REACT_APP_chainId
   const REACT_APP_ADDRESS = process.env.REACT_APP_ADDRESS
-  console.log('chainid', chainId)
-  console.log('REACT_APP_ADDRESS', REACT_APP_ADDRESS)
   if (window.ethereum) {
     try {
       const chain = await window.ethereum.request({ method: 'eth_chainId' })

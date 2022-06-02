@@ -13,12 +13,19 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
+    {/* <Auth0Provider
+      domain="dev-luotntol.us.auth0.com"
+      clientId="Zrm75a4eXhFegGyPku5337zrnYEyeDc1"
+      redirectUri={window.location.origin}
+      // audience={process.env.REACT_APP_baseUrl}
+      // scope="read:get_stats"
+    > */}
     <Auth0Provider
       domain="dev---utwscq.us.auth0.com"
       clientId="DpGvdcZFYxn33xajjb4gtliuG0yS6wSK"
       redirectUri={window.location.origin}
-      audience={process.env.REACT_APP_baseUrl}
-      scope="read:get_stats"
+      // audience={process.env.REACT_APP_baseUrl}
+      // scope="read:get_stats"
     >
       <App />
     </Auth0Provider>

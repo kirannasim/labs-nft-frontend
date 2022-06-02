@@ -5,7 +5,6 @@ const CustomButton = ({
   padding_x,
   padding_y,
 }) => {
-  console.log(padding_x, padding_y)
   return (
     <button type="button" className={`btn ${btn_class_name}`}>
       <div

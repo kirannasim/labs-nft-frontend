@@ -11,12 +11,25 @@ import '../../assets/scss/home/home.scss'
 import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const Home = () => {
-  const { getAccessTokenSilently } = useAuth0()
-  const { loginStatus, setLoginStatus } = useContext(LoginStatusContext)
+  const { getAccessTokenSilently, user } = useAuth0()
+  const { setToken, loginStatus } = useContext(LoginStatusContext)
+
+  useEffect(() => {
+    ;(async () => {
+      if (user) {
+        const token_info = await getAccessTokenSilently({
+          // audience: process.env.REACT_APP_appUrl,
+          // audience: 'https://my.react.test/',
+          // scope: 'read:get_stats',
+        })
+        setToken(token_info)
+      }
+    })()
+  }, [user])
+
   const navigate = useNavigate()
 
   useEffect(() => {
-    console.log(loginStatus)
     if (loginStatus) {
       navigate('/purchase-details')
     }

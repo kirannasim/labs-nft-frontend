@@ -10,7 +10,13 @@ import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const Topbar = () => {
   const { logout } = useAuth0()
-  const { loginStatus, setLoginStatus, user } = useContext(LoginStatusContext)
+  const { loginStatus, setLoginStatus, setToken, user } =
+    useContext(LoginStatusContext)
+  const handleLoginout = () => {
+    setLoginStatus(false)
+    setToken(false)
+    logout()
+  }
 
   return (
     <nav className="navbar navbar-expand-xl navbar-light fixed-top">
@@ -96,7 +102,7 @@ const Topbar = () => {
                 >
                   <div className="submenu--wrapper">
                     <FiLogOut />
-                    <p className="bb_16_thin logout" onClick={logout}>
+                    <p className="bb_16_thin logout" onClick={handleLoginout}>
                       Sign Out
                     </p>
                   </div>

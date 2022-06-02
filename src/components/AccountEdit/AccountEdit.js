@@ -1,6 +1,64 @@
-import '../../assets/scss/accountEdit/accountEdit.scss'
+import { useState, useContext } from 'react'
+import axios from 'axios'
 import { FiEdit2 } from 'react-icons/fi'
+import { useAuth0 } from '@auth0/auth0-react'
+
+import { LoginStatusContext } from '../../context/LoginStatusContext'
+import '../../assets/scss/accountEdit/accountEdit.scss'
+
 const AccountEdit = () => {
+  const { user } = useAuth0()
+
+  const { token } = useContext(LoginStatusContext)
+
+  console.log('userddddddddddddddddddddddddddd', user)
+  console.log('tokenddddddddddddddddddddddddddd', token)
+
+  const [formInfo, setFormInfo] = useState({
+    fullname: user?.nickname,
+    emailAddress: user?.email ? user?.email : '',
+    password: '',
+  })
+
+  console.log('formInfo', formInfo)
+  const handleSubmit = (formInfo) => {
+    // axios
+    //   .post(process.env.REACT_APP_baseUrl + '/users', formInfo, {
+    //     headers: {
+    //       Authorization: `Bearer ${token}`,
+    //       'content-type': 'application/json',
+    //     },
+    //   })
+    //   .then((response) => {
+    //     console.log('ddddddddddddddddd', response.data)
+    //   })
+    //   .catch()
+    axios
+      .post(
+        process.env.REACT_APP_baseUrl + '/users',
+        {
+          emailAddress: formInfo.emailAddress,
+          password: formInfo.password,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'content-type': 'application/json',
+          },
+        }
+      )
+      .then((response) => {
+        console.log('/users  response', response.data)
+      })
+      .catch()
+  }
+  const handleOnChange = (e) => {
+    setFormInfo({
+      ...formInfo,
+      [e.target.name]: e.target.value,
+    })
+  }
+
   return (
     <div className="account-eidt-container ">
       <section className="detail-section">
@@ -10,7 +68,12 @@ const AccountEdit = () => {
             <div className="input-group px-1 px-xxl-0">
               <div className="input-title bb_18_regular">FULL NAME</div>
               <div className="input-box">
-                <input className="input-edit bb_16_thin" />
+                <input
+                  name="fullname"
+                  className="input-edit bb_16_thin"
+                  value={formInfo.fullname}
+                  onChange={handleOnChange}
+                />
                 <div className="icon">
                   <FiEdit2 />
                 </div>
@@ -19,7 +82,13 @@ const AccountEdit = () => {
             <div className="input-group px-1 px-xxl-0">
               <div className="input-title bb_18_regular">Email Address</div>
               <div className="input-box">
-                <input type="text" className="input-edit bb_16_thin" />
+                <input
+                  name="emailAddress"
+                  type="text"
+                  className="input-edit bb_16_thin"
+                  value={formInfo.emailAddress}
+                  onChange={handleOnChange}
+                />
                 <div className="icon">
                   <FiEdit2 />
                 </div>
@@ -28,7 +97,13 @@ const AccountEdit = () => {
             <div className="input-group px-1 px-xxl-0">
               <div className="input-title bb_18_regular">Password</div>
               <div className="input-box">
-                <input type="password" className="input-edit bb_16_thin" />
+                <input
+                  name="password"
+                  type="password"
+                  className="input-edit bb_16_thin"
+                  value={formInfo.password}
+                  onChange={handleOnChange}
+                />
                 <div className="icon">
                   <FiEdit2 />
                 </div>
@@ -37,7 +112,9 @@ const AccountEdit = () => {
                 *It’s Contain atleast 4 Character,1 Symbol and others Numeric.
               </div>
             </div>
-            <button className="signup px-1 px-xxl-0">Change</button>
+            <button className="signup px-1 px-xxl-0" onClick={handleSubmit}>
+              Change
+            </button>
           </div>
           <div className="notify-offline">
             <input className="notify-check" type="checkbox" />

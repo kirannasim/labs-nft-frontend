@@ -4,12 +4,12 @@ const NodeCards = ({ userStats }) => {
       <div className="wrapper">
         <div className="card1">
           <div className="card-title">$Looklabs balance</div>
-          <div className="card-value">{userStats?.goalProgressPercent}</div>
+          <div className="card-value">{userStats?.activeNodeCount}</div>
           {/* <div className="card-value">125.1248</div> */}
         </div>
         <div className="card2">
-          <div className="card-title">$LOOKLABS BALANCE</div>
-          <div className="card-value">{userStats?.networkNodeCount}</div>
+          <div className="card-title">$Total Node Account</div>
+          <div className="card-value">{userStats?.totalNodeCount}</div>
           {/* <div className="card-value">125.1248</div> */}
         </div>
         <div className="card-group">
@@ -19,8 +19,8 @@ const NodeCards = ({ userStats }) => {
             {/* <div className="card-value">2</div> */}
           </div>
           <div className="card32">
-            <div className="card-title">YOUR LOOK NODES LISCENSES</div>
-            <div className="card-value">{userStats?.licenseCount}</div>
+            <div className="card-title">Goal Progress Percent</div>
+            <div className="card-value">{userStats?.goalProgressPercent}</div>
             {/* <div className="card-value">2</div> */}
           </div>
         </div>
