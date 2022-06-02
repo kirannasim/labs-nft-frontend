@@ -58,6 +58,12 @@
             letter-spacing: 0.1rem;
           }
         }
+
+        &:disabled {
+          background-color: #2043f1 !important;
+          border-color: #2043f1 !important;
+          opacity: 1;
+        }
       }
     }
 

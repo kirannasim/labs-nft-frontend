@@ -65,7 +65,7 @@ const PurchaseDetailsContent = () => {
             onClick={
               walletAddress ? disconnectWalletButton : connectWalletButton
             }
-            // disabled={walletAddress ? true : false}
+            disabled={walletAddress ? true : false}
           >
             <div className="bb_16_medium">
               {walletAddress ? (
