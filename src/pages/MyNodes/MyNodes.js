@@ -27,18 +27,19 @@ const MyNodes = () => {
     // })
     // setToken(token)
     console.log('Mynode page', token)
-    token &&
-      axios
-        .get(process.env.REACT_APP_baseUrl + '/users/stats', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((response) => {
-          console.log('users/stats    response', response.data)
-          setUserStats(response.data)
-        })
-        .catch()
+    axios
+      .get(process.env.REACT_APP_baseUrl + '/users/stats', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        console.log('users/stats    response', response.data)
+        setUserStats(response.data)
+      })
+      .catch((e) => {
+        console.log()
+      })
     // })()
   }, [getAccessTokenSilently, user?.sub])
 
