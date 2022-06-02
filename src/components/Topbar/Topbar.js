@@ -15,6 +15,7 @@ const Topbar = () => {
   const handleLoginout = () => {
     setLoginStatus(false)
     setToken(false)
+    localStorage.setItem('token', '')
     logout()
   }
 

@@ -36,6 +36,7 @@ const Home = () => {
         // })
         // console.log('metadataResponse', metadataResponse)
 
+        localStorage.setItem('token', JSON.stringify(token_info))
         setToken(token_info)
       }
     })()
