@@ -45,8 +45,6 @@ const Home = () => {
 
   useEffect(() => {
     if (loginStatus && !logoClicked) {
-      console.log('ddddddddddddddddd', logoClicked)
-      // debugger
       setLogoClicked(false)
       navigate('/purchase-details')
     }
