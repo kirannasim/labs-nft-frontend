@@ -17,6 +17,8 @@ root.render(
       domain="dev-luotntol.us.auth0.com"
       clientId="Zrm75a4eXhFegGyPku5337zrnYEyeDc1"
       redirectUri={window.location.origin}
+      audience="https://dev-luotntol.us.auth0.com/api/v2/"
+      scope="read:current_user update:current_user_metadata"
       // audience={process.env.REACT_APP_baseUrl}
       // scope="read:get_stats"
     > */}
@@ -24,8 +26,8 @@ root.render(
       domain="dev---utwscq.us.auth0.com"
       clientId="DpGvdcZFYxn33xajjb4gtliuG0yS6wSK"
       redirectUri={window.location.origin}
-      // audience={process.env.REACT_APP_baseUrl}
-      // scope="read:get_stats"
+      audience="dev---utwscq.us.auth0.com/api/v2/"
+      scope="read:current_user update:current_user_metadata"
     >
       <App />
     </Auth0Provider>

@@ -13,15 +13,27 @@ import { LoginStatusContext } from '../../context/LoginStatusContext'
 const Home = () => {
   const { getAccessTokenSilently, user } = useAuth0()
   const { setToken, loginStatus } = useContext(LoginStatusContext)
+  const domain = 'dev---utwscq.us.auth0.com'
 
   useEffect(() => {
     ;(async () => {
       if (user) {
         const token_info = await getAccessTokenSilently({
-          // audience: process.env.REACT_APP_appUrl,
+          audience: `https://${domain}/api/v2/`,
+          scope: 'read:current_user',
           // audience: 'https://my.react.test/',
           // scope: 'read:get_stats',
         })
+        const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`
+
+        console.log('token_info', token_info)
+        // const metadataResponse = await fetch(userDetailsByIdUrl, {
+        //   headers: {
+        //     Authorization: `Bearer ${token_info}`,
+        //   },
+        // })
+        // console.log('metadataResponse', metadataResponse)
+
         setToken(token_info)
       }
     })()
@@ -29,11 +41,11 @@ const Home = () => {
 
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (loginStatus) {
-      navigate('/purchase-details')
-    }
-  }, [loginStatus])
+  // useEffect(() => {
+  //   if (loginStatus) {
+  //     navigate('/purchase-details')
+  //   }
+  // }, [loginStatus])
 
   return (
     <div className="home-page">
