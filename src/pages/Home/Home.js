@@ -20,20 +20,20 @@ const Home = () => {
     ;(async () => {
       if (user) {
         const token_info = await getAccessTokenSilently({
-          audience: `https://${domain}/api/v2/`,
+          // audience: `https://${domain}/api/v2/`,
           // scope: 'read:current_user',
           // audience: 'https://my.react.test/',
           // scope: 'read:get_stats',
         })
-        const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`
+        // const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`
 
-        console.log('token_info', token_info)
-        const metadataResponse = await fetch(userDetailsByIdUrl, {
-          headers: {
-            Authorization: `Bearer ${token_info}`,
-          },
-        })
-        console.log('metadataResponse', metadataResponse)
+        // console.log('token_info', token_info)
+        // const metadataResponse = await fetch(userDetailsByIdUrl, {
+        //   headers: {
+        //     Authorization: `Bearer ${token_info}`,
+        //   },
+        // })
+        // console.log('metadataResponse', metadataResponse)
 
         setToken(token_info)
       }
