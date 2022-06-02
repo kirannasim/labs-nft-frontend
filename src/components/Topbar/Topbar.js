@@ -10,7 +10,7 @@ import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const Topbar = () => {
   const { logout } = useAuth0()
-  const { loginStatus, setLoginStatus, setToken, user } =
+  const { loginStatus, setLoginStatus, setToken, user, setLogoClicked } =
     useContext(LoginStatusContext)
   const handleLoginout = () => {
     setLoginStatus(false)
@@ -21,8 +21,14 @@ const Topbar = () => {
   return (
     <nav className="navbar navbar-expand-xl navbar-light fixed-top">
       <div className="navbar-container">
-        <Link className="navbar-brand" to="/logined-home">
-          <img src={logoImgage} alt="Logo" />
+        <Link className="navbar-brand" to="/">
+          <img
+            src={logoImgage}
+            alt="Logo"
+            onClick={() => {
+              setLogoClicked(true)
+            }}
+          />
         </Link>
         <div
           className="navbar-toggler"

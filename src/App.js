@@ -10,6 +10,7 @@ function App() {
 
   const [loginStatus, setLoginStatus] = useState(isAuthenticated ? true : false)
   const [token, setToken] = useState(isAuthenticated ? true : false)
+  const [logoClicked, setLogoClicked] = useState(false)
 
   useEffect(() => {
     if (isAuthenticated) setLoginStatus(true)
@@ -18,7 +19,15 @@ function App() {
 
   return (
     <LoginStatusContext.Provider
-      value={{ loginStatus, setLoginStatus, user, token, setToken }}
+      value={{
+        loginStatus,
+        setLoginStatus,
+        user,
+        token,
+        setToken,
+        logoClicked,
+        setLogoClicked,
+      }}
     >
       <BrowserRouter>
         <Layout />
