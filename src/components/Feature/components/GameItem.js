@@ -8,6 +8,7 @@ const GameItem = ({
   gener,
   developmentStatus,
   platform,
+  href,
 }) => {
   return (
     <div className="game--container">
@@ -41,9 +42,17 @@ const GameItem = ({
             <p className="bb_16_thin">{platform}</p>
           </div>
           <div className="col-12 button--container">
-            <button type="button" className="btn btn-primary">
-              <span className="bb_18">play game</span>
-            </button>
+            {href ? (
+              <a href={href} target={'_blank'}>
+                <button type="button" className="btn btn-primary">
+                  <span className="bb_18">play game</span>
+                </button>
+              </a>
+            ) : (
+              <button type="button" className="btn btn-primary">
+                <span className="bb_18">play game</span>
+              </button>
+            )}
           </div>
         </div>
       </div>

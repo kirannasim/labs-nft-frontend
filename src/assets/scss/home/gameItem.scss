@@ -56,6 +56,8 @@
         display: flex;
         justify-content: center;
       }
+
+      a,
       button {
         display: flex;
         justify-content: center;
@@ -65,6 +67,10 @@
         margin-top: 1.875rem;
         max-width: 21.625rem;
         width: 100%;
+      }
+
+      a {
+        padding: 0;
       }
     }
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../assets/scss/home/node.scss'
 import computerImage from '../../assets/images/computer.png'
+import { Link } from 'react-router-dom'
 
 const Node = () => {
   return (
@@ -15,9 +16,11 @@ const Node = () => {
             a Gala Node, you open up opportunities to receive rewards for your
             contribution to the network.
           </p>
-          <button type="button" className="btn btn-primary">
-            <span className="bb_18">buy now</span>
-          </button>
+          <Link to="/purchase-details">
+            <button type="button" className="btn btn-primary">
+              <span className="bb_18">buy now</span>
+            </button>
+          </Link>
         </div>
 
         <div className="col-xxl-5 image--container d-none d-xl-block">

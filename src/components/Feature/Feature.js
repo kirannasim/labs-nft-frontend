@@ -15,6 +15,7 @@ const gameItem_data = [
     gener: 'Match-Three',
     development_status: 'Test Game in development',
     platform: 'Browser',
+    href: 'https://end.game/',
   },
   {
     image: gameItemImage2,
@@ -25,6 +26,7 @@ const gameItem_data = [
     gener: 'Match-Three',
     development_status: 'Test Game in development',
     platform: 'Browser',
+    href: 'https://www.420.game/',
   },
   {
     image: gameItemImage3,
@@ -35,6 +37,7 @@ const gameItem_data = [
     gener: 'Match-Three',
     development_status: 'Test Game in development',
     platform: 'Browser',
+    href: '',
   },
 ]
 
@@ -55,6 +58,7 @@ const Feature = () => {
             gener={item.gener}
             developmentStatus={item.development_status}
             platform={item.platform}
+            href={item.href}
           />
         ))}
       </div>
