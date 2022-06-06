@@ -18,12 +18,11 @@ const Topbar = () => {
             className="d-block d-xxl-none banner--left__image"
           />
           <p className="Bb_22 text-left">
-            The WorkGenius Platform holds over 350,000 registered freelancers
-            (“Geniuses”) providing professional services across.
+            Join us as we build the future of blockchain gaming.
           </p>
-          <button type="button" className="btn btn-primary btn-learn">
+          {/* <button type="button" className="btn btn-primary btn-learn">
             <div className="bb_18">Learn More</div>
-          </button>
+          </button> */}
         </div>
         <div className="banner--right col-xxl-6 col-12 d-xxl-block d-none">
           <img src={bannerImgage} alt="Banner Image" />

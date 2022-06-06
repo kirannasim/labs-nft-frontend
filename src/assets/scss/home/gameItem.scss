@@ -10,11 +10,20 @@
   }
 
   &__imgwrapper {
-    max-width: 28.75rem;
-    width: 100%;
+    min-width: 28.75rem;
+
+    @media (max-width: 1600px) {
+      min-width: 22rem;
+    }
+
+    @media (max-width: 1024px) {
+      min-width: 18rem;
+    }
+
     @media (max-width: 768px) {
       margin: auto;
     }
+
     img {
       width: 100%;
     }

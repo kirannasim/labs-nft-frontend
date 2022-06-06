@@ -3,15 +3,14 @@ const NodeCards = ({ userStats }) => {
     <section className="nodecards">
       <div className="wrapper">
         <div className="card1">
-          <div className="card-title">$Looklabs balance</div>
+          <div className="card-title">$LL BALANCE</div>
           <div className="card-value">
             {userStats?.activeNodeCount ? userStats?.activeNodeCount : 0}
           </div>
-          {/* <div className="card-value">125.1248</div> */}
         </div>
         <div className="card2">
           <div className="card-title">
-            <div>$Total Node Account</div>
+            <div>YOUR ACTIVE NODES</div>
             <div className="goal--progress__percent">
               {userStats?.goalProgressPercent ? userStats?.licenseCount : 0}
               &nbsp;%
@@ -20,7 +19,6 @@ const NodeCards = ({ userStats }) => {
           <div className="card-value">
             {userStats?.totalNodeCount ? userStats?.totalNodeCount : 0}
           </div>
-          {/* <div className="card-value">125.1248</div> */}
         </div>
         <div className="card-group">
           <div className="card31">
@@ -28,16 +26,14 @@ const NodeCards = ({ userStats }) => {
             <div className="card-value">
               {userStats?.licenseCount ? userStats?.licenseCount : 0}
             </div>
-            {/* <div className="card-value">2</div> */}
           </div>
           <div className="card32">
-            <div className="card-title">Goal Progress Percent</div>
+            <div className="card-title">PROGRESS TOWARDS TODAY’S GOAL</div>
             <div className="card-value">
               {userStats?.goalProgressPercent
                 ? userStats?.goalProgressPercent
                 : 0}
             </div>
-            {/* <div className="card-value">2</div> */}
           </div>
         </div>
         <div className="card4">
@@ -45,14 +41,13 @@ const NodeCards = ({ userStats }) => {
           <div className="card-value">
             {userStats?.referralCode ? userStats?.referralCode : 0}
           </div>
-          {/* <div className="card-value">7H392M3</div> */}
         </div>
       </div>
-      <div className="addItemBtn">
+      {/* <div className="addItemBtn">
         <button type="button" className="addBtn bb_16_medium">
           ADDITEM
         </button>
-      </div>
+      </div> */}
     </section>
   )
 }

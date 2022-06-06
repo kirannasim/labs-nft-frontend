@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 import logoImgage from '../../assets/images/logo.png'
@@ -9,14 +9,20 @@ import { FiMenu, FiLogOut, FiEdit } from 'react-icons/fi'
 import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const Topbar = () => {
-  const { logout } = useAuth0()
+  const { logout, loginWithRedirect } = useAuth0()
   const { loginStatus, setLoginStatus, setToken, user, setLogoClicked } =
-    useContext(LoginStatusContext)
+    useContext(LoginStatusContext);
+  
   const handleLoginout = () => {
     setLoginStatus(false)
     setToken(false)
     localStorage.setItem('token', '')
     logout()
+  }
+
+  const handleNavClick = (item) => {
+    if (item.logo_clicked === undefined) return;
+      setLogoClicked(item.logo_clicked);
   }
 
   return (
@@ -49,7 +55,9 @@ const Topbar = () => {
               (item) =>
                 item.is_react_router ? (
                   <NavLink
+                    // to={item?.logo_clicked ? false : item.href}
                     to={item.href}
+                    onClick={handleNavClick(item)}
                     className={(isActive) =>
                       'nav-link' + (!isActive ? ' unselected' : '')
                     }
@@ -74,14 +82,15 @@ const Topbar = () => {
           <div className="d-flex buttons">
             {!loginStatus ? (
               <>
-                <Link to="/login">
+                {/* <Link to="/login"> */}
                   <button
                     type="button"
+                    onClick={loginWithRedirect}
                     className="btn btn-outline-primary topbar--btn btn--login"
                   >
                     Login
                   </button>
-                </Link>
+                {/* </Link> */}
                 <Link to="/signup">
                   <button type="button" className="btn btn-primary topbar--btn">
                     Sign Up

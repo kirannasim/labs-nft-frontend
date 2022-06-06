@@ -12,7 +12,7 @@ import { LoginStatusContext } from '../../context/LoginStatusContext'
 
 const Home = () => {
   const { getAccessTokenSilently, user } = useAuth0()
-  const { setToken, loginStatus, logoClicked, setLogoClicked } =
+  const { setToken, loginStatus, setLoginStatus, logoClicked, setLogoClicked } =
     useContext(LoginStatusContext)
   const domain = 'dev---utwscq.us.auth0.com'
   // const domain = 'dev-luotntol.us.auth0.com'
@@ -46,8 +46,8 @@ const Home = () => {
 
   useEffect(() => {
     if (loginStatus && !logoClicked) {
-      setLogoClicked(false)
-      navigate('/purchase-details')
+      // setLogoClicked(false)
+      navigate('/mynodes')
     }
   }, [loginStatus])
 

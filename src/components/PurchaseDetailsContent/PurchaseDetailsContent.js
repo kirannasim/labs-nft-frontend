@@ -34,27 +34,31 @@ const PurchaseDetailsContent = () => {
         <div className="connect--card">
           <div className="connect--card__left--space"></div>
           <div className="connect--card__content">
-            <h4>Arcx - End game</h4>
+            <h4>PURCHASE A NODE LICENSE</h4>
             <p className="bb_18_regular">Develpoed By Look labs</p>
             <p className="bb-20_regular">Look Labs Nodes</p>
-            <h5>Transaction ID</h5>
-            <p className="bb_16_medium">10234567895622</p>
+            {/* <h5>Transaction ID</h5>
+            <p className="bb_16_medium">10234567895622</p> */}
             <div className="connect--card__content--bottom row">
               <div className="col-12 col-md-6 pt-3">
-                <h5 className="">Nodes Purchase</h5>
+                <h5>Nodes Purchase</h5>
                 <p className="bb_16_thin">3,4000/50,000</p>
               </div>
               <div className="col-12 col-md-6 pt-3">
-                <h5 className="">Developer</h5>
+                <h5>Developer</h5>
                 <p className="bb_16_thin">Look labs</p>
               </div>
               <div className="col-12 col-md-6 pt-3">
-                <h5 className="">Development Status</h5>
-                <p className="bb_16_thin">Test Game in development</p>
+                <h5>Development Status</h5>
+                <p className="bb_16_thin">LIVE</p>
               </div>
               <div className="col-12 col-md-6 pt-3">
-                <h5 className="">Platform</h5>
-                <p className="bb_16_thin">Browser</p>
+                <h5>Platform</h5>
+                <p className="bb_16_thin">Windows/Mac/Linux</p>
+              </div>
+              <div className="cost--container">
+                <h5>Price</h5>
+                <p className="bb_16_medium">$19,000</p>
               </div>
             </div>
           </div>
@@ -70,10 +74,10 @@ const PurchaseDetailsContent = () => {
             <div className="bb_16_medium">
               {walletAddress ? (
                 <>
-                  <span className="wallet--address">
+                  {/* <span className="wallet--address">
                     {walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}
-                  </span>{' '}
-                  Disconnect
+                  </span>{' '} */}
+                  Purchase Node
                 </>
               ) : (
                 'Connect wallet'
@@ -82,7 +86,7 @@ const PurchaseDetailsContent = () => {
             {/* <div className="bb_16_medium">Connect wallet</div> */}
           </button>
         </div>
-        <div className="purchase--card">
+        {/* <div className="purchase--card">
           <div className="cost--container">
             <p className="price-title bb_16_medium">Price</p>
             <p className="bb_16_medium">$19,000</p>
@@ -101,7 +105,7 @@ const PurchaseDetailsContent = () => {
           >
             <span className="purchase">PURCHASE</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   )

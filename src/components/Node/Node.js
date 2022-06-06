@@ -11,10 +11,7 @@ const Node = () => {
           <h3>Look Labs</h3>
           <h2>Node License</h2>
           <p className="bb_18_light">
-            The Gala Network is supported by users, just like you, who operate
-            Gala Nodes from their home computers. By buying a license to operate
-            a Gala Node, you open up opportunities to receive rewards for your
-            contribution to the network.
+            The Look Labs network is supported by node operators. Buy a license to operate a Look Labs node and contribute to earn rewards.
           </p>
           <Link to="/purchase-details">
             <button type="button" className="btn btn-primary">

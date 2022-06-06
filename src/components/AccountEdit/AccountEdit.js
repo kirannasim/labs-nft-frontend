@@ -109,7 +109,7 @@ const AccountEdit = () => {
                 </div>
               </div>
               <div className="passwordTip bb_16_thin">
-                *It’s Contain atleast 4 Character,1 Symbol and others Numeric.
+                MUST CONTAIN AT LEAST 4 CHARACTERS, 1 SYMBOL, AND 1 NUMBERIC
               </div>
             </div>
             <button className="signup px-1 px-xxl-0" onClick={handleSubmit}>

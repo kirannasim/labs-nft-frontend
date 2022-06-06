@@ -46,27 +46,27 @@ const Node = () => {
       <div className="footer--container__bottom">
         <div className="copyright--wrapper text--wrapper">
           <span className="bb_16_regular">
-            © 2021. loklabs. All Rights Reserved
+            © 2022 Look Labs. All Rights Reserved
           </span>
         </div>
         <div className="social--wrapper">
-          <div className="social-item">
+          {/* <div className="social-item">
             <a href="https://facebook.com" target="_blank" rel="noreferrer">
               <img src={facebookIcon} alt="facebook icon" />
             </a>
-          </div>
+          </div> */}
           <div className="social-item">
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+            <a href="https://twitter.com/look_labs" target="_blank" rel="noreferrer">
               <img src={twitterIcon} alt="twitter icon" />
             </a>
           </div>
           <div className="social-item">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/looklabs" target="_blank" rel="noreferrer">
               <img src={instagramIcon} alt="instagram icon" />
             </a>
           </div>
           <div className="social-item">
-            <a href="https://discord.com" target="_blank" rel="noreferrer">
+            <a href="https://discord.gg/looklabs" target="_blank" rel="noreferrer">
               <img src={discordIcon} alt="discord" />
             </a>
           </div>
