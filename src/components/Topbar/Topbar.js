@@ -11,8 +11,8 @@ import { LoginStatusContext } from '../../context/LoginStatusContext'
 const Topbar = () => {
   const { logout, loginWithRedirect } = useAuth0()
   const { loginStatus, setLoginStatus, setToken, user, setLogoClicked } =
-    useContext(LoginStatusContext);
-  
+    useContext(LoginStatusContext)
+
   const handleLoginout = () => {
     setLoginStatus(false)
     setToken(false)
@@ -21,8 +21,8 @@ const Topbar = () => {
   }
 
   const handleNavClick = (item) => {
-    if (item.logo_clicked === undefined) return;
-      setLogoClicked(item.logo_clicked);
+    if (item.logo_clicked === undefined) return
+    setLogoClicked(item.logo_clicked)
   }
 
   return (
@@ -83,19 +83,23 @@ const Topbar = () => {
             {!loginStatus ? (
               <>
                 {/* <Link to="/login"> */}
-                  <button
-                    type="button"
-                    onClick={loginWithRedirect}
-                    className="btn btn-outline-primary topbar--btn btn--login"
-                  >
-                    Login
-                  </button>
+                <button
+                  type="button"
+                  onClick={loginWithRedirect}
+                  className="btn btn-outline-primary topbar--btn btn--login"
+                >
+                  Login
+                </button>
                 {/* </Link> */}
-                <Link to="/signup">
-                  <button type="button" className="btn btn-primary topbar--btn">
-                    Sign Up
-                  </button>
-                </Link>
+                {/* <Link to="/signup"> */}
+                <button
+                  onClick={loginWithRedirect}
+                  type="button"
+                  className="btn btn-primary topbar--btn"
+                >
+                  Sign Up
+                </button>
+                {/* </Link> */}
               </>
             ) : (
               <div
