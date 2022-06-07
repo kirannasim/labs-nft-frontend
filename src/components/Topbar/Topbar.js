@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 import logoImgage from '../../assets/images/logo.png'
@@ -12,6 +12,7 @@ const Topbar = () => {
   const { logout, loginWithRedirect } = useAuth0()
   const { loginStatus, setLoginStatus, setToken, user, setLogoClicked } =
     useContext(LoginStatusContext)
+  const [bgBlack, setBgBlack] = useState(false)
 
   const handleLoginout = () => {
     setLoginStatus(false)
@@ -25,8 +26,23 @@ const Topbar = () => {
     setLogoClicked(item.logo_clicked)
   }
 
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 200) {
+      setBgBlack(true)
+    } else {
+      setBgBlack(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeNavbarColor)
+
   return (
-    <nav className="navbar navbar-expand-xl navbar-light fixed-top">
+    <nav
+      className={`navbar navbar-expand-xl navbar-light fixed-top + ${
+        bgBlack ? 'bg--black' : ''
+      }
+    `}
+    >
       <div className="navbar-container">
         <Link className="navbar-brand" to="/">
           <img
